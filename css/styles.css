@@ -641,4 +641,177 @@ main.bg-blue .background-blue section.main-content-user input {
 }
 /* ====================================
    QUEM SOMOS
+==================================== */
+
+.quem-somos-real {
+    background: #f3f3f3;
+    min-height: 100vh;
+}
+
+.titulo-quem {
+    background: white;
+    text-align: center;
+    padding: 4rem 1rem 2rem;
+}
+
+.titulo-quem h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.titulo-quem p {
+    max-width: 850px;
+    margin: auto;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.banner-quem img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+.conteudo-quem {
+    max-width: 900px;
+    margin: auto;
+    padding: 5rem 2rem;
+}
+
+.conteudo-quem article {
+    margin-bottom: 5rem;
+}
+
+.conteudo-quem h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.conteudo-quem p {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    color: #333;
+}
+
+/* INTEGRANTES */
+
+.box-integrantes {
+    background: #004B8D;
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 5rem;
+}
+
+.box-integrantes h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.cards-integrantes {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-integrante {
+    background: white;
+    width: 220px;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.card-integrante i {
+    font-size: 5rem;
+    color: #004B8D;
+}
+
+.card-integrante h4 {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.card-integrante span {
+    color: #666;
+}
+
+/* CTA */
+
+.cta-quem {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.cta-quem h2 {
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.cta-quem a {
+    background: #FFC107;
+    color: black;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+/* ÍCONE USUÁRIO */
+
+.user-icon i {
+    color: white;
+    font-size: 2rem;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px) {
+
+    .titulo-quem h1 {
+        font-size: 2rem;
+    }
+
+    .titulo-quem p {
+        font-size: 1rem;
+    }
+
+    .banner-quem img {
+        height: 250px;
+    }
+
+    .conteudo-quem {
+        padding: 3rem 1.5rem;
+    }
+
+    .conteudo-quem h2 {
+        font-size: 1.5rem;
+    }
+
+    .conteudo-quem p {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+
+}
+@media (max-width: 768px) {
+
+    .donate-heading {
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        white-space: normal;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .donate-heading span {
+        white-space: nowrap;
+    }
+
 }
