@@ -258,6 +258,67 @@ main.bg-blue .background-blue section.main-content-not-user {
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 3rem;
+}
+
+main.bg-blue .background-blue section.main-content-not-user input {
+    border-radius: 0.5rem;
+    border: 1px solid #00000079;
+    padding: 5px 10px;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+main.bg-blue .background-blue .user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+main.bg-blue .background-blue section.main-content-user {
+    width: 60vw;
+    background-color: #fff;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+}
+
+main.bg-blue .background-blue section.main-content-user article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 1rem 0;
+    width: 100%;
+    margin-left: 3rem;
+}
+
+main.bg-blue .background-blue section.main-content-user article img{
+        width: 100%;
+    }
+
+main.bg-blue .background-blue section.main-content-user input {
+    border-radius: 0.5rem;
+    border: 1px solid #00000079;
+    padding: 5px 10px;
+    margin-bottom: 2rem;
+    width: 80%;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 767px) {
+    main.bg-blue .background-blue section.main-content-user{
+        flex-direction: column;
+    }
+    main.bg-blue .background-blue section.main-content-user article {
+        margin-left: 0;
+    }
 }
 
 .como-ajudar-page {
@@ -582,63 +643,6 @@ main.bg-blue .background-blue section.main-content-not-user {
     padding: 3rem;
 }
 
-main.bg-blue .background-blue section.main-content-not-user input {
-    border-radius: 0.5rem;
-    border: 1px solid #00000079;
-    padding: 5px 10px;
-    margin-bottom: 2rem;
-    width: 100%;
-}
-
-main.bg-blue .background-blue .user {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-main.bg-blue .background-blue section.main-content-user {
-    width: 60vw;
-    background-color: #fff;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3rem;
-}
-
-main.bg-blue .background-blue section.main-content-user article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    margin: 1rem 0;
-    width: 100%;
-    margin-left: 3rem;
-}
-
-main.bg-blue .background-blue section.main-content-user article img{
-        width: 100%;
-    }
-
-main.bg-blue .background-blue section.main-content-user input {
-    border-radius: 0.5rem;
-    border: 1px solid #00000079;
-    padding: 5px 10px;
-    margin-bottom: 2rem;
-    width: 80%;
-}
-
-@media only screen and (min-width: 200px) and (max-width: 767px) {
-    main.bg-blue .background-blue section.main-content-user{
-        flex-direction: column;
-    }
-    main.bg-blue .background-blue section.main-content-user article {
-        margin-left: 0;
-    }
-}
 /* ====================================
    QUEM SOMOS
 ==================================== */
