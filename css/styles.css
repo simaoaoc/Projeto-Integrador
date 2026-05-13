@@ -93,11 +93,44 @@ footer {
 }
 
 .donate-page {
-    background-color: #004B8D;
+    background-color: #ffffff;
 }
 
 .donate-board {
     background-color: #003770;
+}
+
+.donate-heading {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    color: #000;
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+    display: inline-block;
+}
+
+.donate-heading span {
+    opacity: 0;
+    display: inline-block;
+    margin-right: 0.12em;
+    transform: translateX(-18px);
+    animation: donate-reveal 12s ease forwards infinite;
+    animation-delay: calc(var(--i) * 0.08s);
+}
+
+@keyframes donate-reveal {
+    0%, 20% {
+        opacity: 0;
+        transform: translateX(-18px);
+    }
+    22%, 30% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .letter-spacing {
@@ -225,6 +258,325 @@ main.bg-blue .background-blue section.main-content-not-user {
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
+}
+
+.como-ajudar-page {
+    max-width: 980px;
+}
+
+.contato-page {
+    max-width: 980px;
+}
+
+.hero h1 {
+    font-size: clamp(1.3rem, 3.2vw, 2.75rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hero .lead {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    color: #333;
+    margin-bottom: 1.75rem;
+}
+
+.hero-image {
+    overflow: hidden;
+    border-radius: 1rem;
+    width: 100vw;
+    max-width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    max-height: 520px;
+}
+
+.content-section {
+    margin-top: 3.5rem;
+}
+
+.content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.contact-channels {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    background-color: #004B8D;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    margin: 2rem 0;
+}
+
+.channel-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.channel-card .channel-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    font-size: 1.8rem;
+}
+
+.channel-card .channel-icon img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.channel-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0.3rem 0 0.5rem;
+    color: #004B8D;
+}
+
+.channel-card p {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 0.8rem;
+}
+
+.contact-link {
+    color: #004B8D;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: block;
+    word-break: break-word;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+.faq-section {
+    margin-top: 2.5rem;
+}
+
+.faq-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.faq-item {
+    background-color: #f9f9f9;
+    border-left: 4px solid #004B8D;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.faq-item h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: #000;
+}
+
+.faq-item p {
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+@media (max-width: 991px) {
+    .contact-channels {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-channels {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .channel-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero h1 {
+        font-size: clamp(1.3rem, 4vw, 1.8rem);
+    }
+
+    .content-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .channel-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .channel-card p,
+    .contact-link {
+        font-size: 0.75rem;
+    }
+}
+
+.content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.steps-list,
+.steps-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.steps-list article,
+.steps-grid article {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.steps-list article h3,
+.steps-grid article h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.65rem;
+}
+
+.steps-list article p,
+.steps-grid article p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+.donation-guidelines {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    background-color: #004B8D;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    justify-content: center;
+}
+
+.guideline-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1.8rem 1.5rem;
+    min-width: 260px;
+    flex: 1;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+.guideline-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.guideline-card.good h3 {
+    color: #004B8D;
+}
+
+.guideline-card.avoid h3 {
+    color: #C5272D;
+}
+
+.guideline-card ul {
+    list-style: none;
+    padding-left: 0;
+    color: #333;
+}
+
+.guideline-card ul li {
+    margin-bottom: 0.85rem;
+    line-height: 1.7;
+    position: relative;
+    padding-left: 1.35rem;
+}
+
+.guideline-card.good ul li::before,
+.guideline-card.avoid ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+}
+
+.guideline-card.good ul li::before {
+    background-color: #004B8D;
+}
+
+.guideline-card.avoid ul li::before {
+    background-color: #C5272D;
+}
+
+.cta-section {
+    margin: 3.5rem 0 2.5rem;
+}
+
+.cta-section p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.btn-quero-doar {
+    display: inline-block;
+    background-color: #FFC107;
+    color: #000;
+    padding: 0.95rem 2.5rem;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+}
+
+@media (max-width: 991px) {
+    .donation-guidelines,
+    .steps-list,
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero h1 {
+        font-size: clamp(1.3rem, 4vw, 1.8rem);
+    }
+
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
     justify-content: center;
     align-items: start;
     padding: 3rem;
@@ -286,4 +638,7 @@ main.bg-blue .background-blue section.main-content-user input {
     main.bg-blue .background-blue section.main-content-user article {
         margin-left: 0;
     }
+}
+/* ====================================
+   QUEM SOMOS
 }

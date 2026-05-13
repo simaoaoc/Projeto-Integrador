@@ -17,41 +17,52 @@
     <title>Quero Doar | Pra Quem Precisa</title>
 </head>
 
-<body class="bg-primary text-dark">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3">
+<body>
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="./images/logo-pra-quem-precisa.png" alt="Logo" width="48" class="me-2">
-                <span class="fw-bold">Pra Quem Precisa</span>
+            <a class="navbar-brand" href="#">
+                <img src="./images/logo-pra-quem-precisa.png" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Alternar navegação">
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item me-2">
-                        <a class="btn btn-outline-light btn-sm rounded-pill px-4" href="doar.html">QUERO DOAR</a>
-                    </li>
-                    <li class="nav-item me-2">
-                        <a class="nav-link text-white" href="index.html#como-ajudar">COMO AJUDAR</a>
-                    </li>
-                    <li class="nav-item me-2">
-                        <a class="nav-link text-white" href="index.html#quem-somos">QUEM SOMOS</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 user">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="doar.html">QUERO DOAR</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="index.html#contato">CONTATO</a>
+                        <a class="nav-link" href="como-ajudar.html">COMO AJUDAR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quem-somos.html">QUEM SOMOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">CONTATO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user.html">INFORMAÇÕES DO USUÁRIO</a>
                     </li>
                 </ul>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 not-user">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">LOGIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resgitro.html">CADASTRE-SE</a>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </nav>
 
     <main class="donate-page pb-5">
         <section class="container py-4">
-            <div class="text-center text-white mb-4">
-                <p class="small text-uppercase mb-2 letter-spacing">SELECIONE A ONG E FAÇA SUA DOAÇÃO</p>
+            <div class="text-center bg-white mb-4 py-4 rounded-4">
+                <p class="small text-uppercase mb-0 letter-spacing text-dark donate-heading">SELECIONE A ONG E FAÇA SUA DOAÇÃO</p>
             </div>
 
             <div class="donate-board p-4 rounded-4 shadow-lg">
@@ -265,17 +276,29 @@
         </section>
     </main>
 
-    <footer class="bg-primary text-center text-white py-4">
-        <div class="container">
-            <p class="mb-3 fw-semibold">Nossas Principais Necessidades</p>
-            <div class="d-flex justify-content-center gap-4 flex-wrap">
-                <img src="./images/flip-flops.png" alt="Chinelos" width="60">
-                <img src="./images/blouse.png" alt="Blusa" width="60">
-                <img src="./images/pants.png" alt="Calça" width="60">
-                <img src="./images/shoes.png" alt="Tênis" width="60">
-            </div>
+    <footer>
+        <h4>Nossas Principais Necessidades</h4>
+        <div>
+            <img src="./images/flip-flops.png" alt="">
+            <img src="./images/blouse.png" alt="">
+            <img src="./images/pants.png" alt="">
+            <img src="./images/shoes.png" alt="">
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const heading = document.querySelector('.donate-heading');
+            if (!heading) return;
+            const text = heading.textContent.trim();
+            heading.textContent = '';
+            text.split('').forEach((char, index) => {
+                const span = document.createElement('span');
+                span.textContent = char;
+                span.style.setProperty('--i', index);
+                heading.appendChild(span);
+            });
+        });
+    </script>
 </body>
 
 </html>

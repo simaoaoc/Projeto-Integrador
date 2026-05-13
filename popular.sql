@@ -1,3 +1,4 @@
+﻿INSERT INTO doacoes (titulo, descricao, tamanho, fk_usuario, fk_categoria) VALUES ('Perfil Teste', 'Descrição de teste para o projeto', 'G', 1, 1);
 ﻿-- 1. TIPOS DE ITENS
 INSERT INTO tipos_de_itens (nome) VALUES ('Roupas'), ('Calçados');
 
