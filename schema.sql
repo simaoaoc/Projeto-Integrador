@@ -3,7 +3,6 @@ CREATE TABLE usuarios (
   nome VARCHAR(250) NOT NULL,
   email VARCHAR(250) UNIQUE NOT NULL CHECK (email LIKE '%@%'),
   senha_hash VARCHAR(255) NOT NULL,
-  tipo_usuario ENUM('Doador', 'ONG') NOT NULL,
   ativo boolean NOT NULL DEFAULT TRUE,
   criado_em DATETIME DEFAULT NOW() NOT NULL
 );
@@ -20,9 +19,9 @@ CREATE TABLE sessoes (
 
 CREATE TABLE ongs (
   id_ong INT PRIMARY KEY AUTO_INCREMENT,
-  id_usuario INT NOT NULL,
   nome_fantasia VARCHAR(100) UNIQUE NOT NULL,
   cnpj VARCHAR(18) UNIQUE NOT NULL,
+  cep VARCHAR(9) NOT NULL,
   site VARCHAR(100) UNIQUE NULL,
   status_aprovação ENUM('Aprovada', 'Reprovada', 'Em análise') NOT NULL DEFAULT 'Em análise',
   FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
