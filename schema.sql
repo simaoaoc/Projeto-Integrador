@@ -3,7 +3,6 @@ CREATE TABLE usuarios (
   nome VARCHAR(250) NOT NULL,
   email VARCHAR(250) UNIQUE NOT NULL CHECK (email LIKE '%@%'),
   senha_hash VARCHAR(255) NOT NULL,
-  ativo boolean NOT NULL DEFAULT TRUE,
   criado_em DATETIME DEFAULT NOW() NOT NULL
 );
 
