@@ -2,7 +2,7 @@ CREATE TABLE usuarios (
   id INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(250) NOT NULL,
   email VARCHAR(250) UNIQUE NOT NULL CHECK (email LIKE '%@%'),
-  cep VARCHAR(9) UNIQUE NOT NULL,
+  cep VARCHAR(9) NOT NULL,
   senha_hash VARCHAR(255) NOT NULL,
   criado_em DATETIME DEFAULT NOW() NOT NULL,
   ativo ENUM("ativo", "inativo")
@@ -16,7 +16,7 @@ CREATE TABLE ongs (
   site VARCHAR(100) UNIQUE NULL,
   instagram VARCHAR(100) NULL,
   whatsapp VARCHAR(100) NULL,
-  status_aprovação ENUM('Aprovada', 'Reprovada', 'Em análise') NOT NULL DEFAULT 'Em análise',
+  status_aprovação ENUM('Aprovada', 'Reprovada', 'Em análise') NOT NULL DEFAULT 'Em análise'
 );
 
 CREATE TABLE campanhas (
@@ -35,7 +35,7 @@ CREATE TABLE tipo_itens(
   id_tipo_item INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(200) NOT NULL,
   descrição VARCHAR(200),
-  unidade_medida VARCHAR(10) NOT NULL
+  unidade_medida VARCHAR(10) NOT NULL,
   tamanho VARCHAR(20) NOT NULL
 );
 
