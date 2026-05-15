@@ -22,6 +22,8 @@ CREATE TABLE ongs (
   cnpj VARCHAR(18) UNIQUE NOT NULL,
   cep VARCHAR(9) NOT NULL,
   site VARCHAR(100) UNIQUE NULL,
+  instagram VARCHAR(100) NULL,
+  whasapp VARCHAR(100) NULL,
   status_aprovação ENUM('Aprovada', 'Reprovada', 'Em análise') NOT NULL DEFAULT 'Em análise',
   FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
