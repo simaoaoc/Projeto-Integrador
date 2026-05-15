@@ -58,7 +58,7 @@ CREATE TABLE imagens (
   url VARCHAR(100) NOT NULL,
   id_usuario INT,
   id_ong INT,
-  campanha_id INT,
+  id_campanha INT,
   FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
   FOREIGN KEY (id_ong) REFERENCES ongs(id_ong),
   FOREIGN KEY (campanha_id) REFERENCES campanhas(id_campanha) ON DELETE CASCADE,
