@@ -2,18 +2,10 @@ CREATE TABLE usuarios (
   id INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(250) NOT NULL,
   email VARCHAR(250) UNIQUE NOT NULL CHECK (email LIKE '%@%'),
+  cep VARCHAR(9) UNIQUE NOT NULL,
   senha_hash VARCHAR(255) NOT NULL,
-  criado_em DATETIME DEFAULT NOW() NOT NULL
-);
-
-CREATE TABLE sessoes (
-  sid UUID PRIMARY KEY,
-  id_usuario INT NOT NULL,
-  criado_em DATETIME NOT NULL,
-  expira_em DATETIME NOT NULL,
-  ip VARCHAR(45) NOT NULL,
-  user_agent VARCHAR(100),
-  FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+  criado_em DATETIME DEFAULT NOW() NOT NULL,
+  ativo ENUM("ativo", "inativo")
 );
 
 CREATE TABLE ongs (
@@ -44,6 +36,7 @@ CREATE TABLE tipo_itens(
   nome VARCHAR(200) NOT NULL,
   descrição VARCHAR(200),
   unidade_medida VARCHAR(10) NOT NULL
+  tamanho VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE campanha_itens(
