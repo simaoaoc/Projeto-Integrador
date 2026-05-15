@@ -47,7 +47,9 @@ CREATE TABLE campanha_itens(
   quantidade_arrecadada INT DEFAULT 0 CHECK (quantidade_arrecadada >= 0),
   observação VARCHAR(100),
   FOREIGN KEY (id_campanha) REFERENCES campanhas(id_campanha) ON DELETE CASCADE,
-  FOREIGN KEY (id_tipo_item) REFERENCES tipo_itens(id_tipo_item) ON DELETE RESTRICT
+  FOREIGN KEY (id_tipo_item) REFERENCES tipo_itens(id_tipo_item) ON DELETE RESTRICT,
+  UNIQUE(id_campanha, id_tipo_item),
+  CHECK(quantidade_arrecadada <= quantidade_meta)
 );
 
 CREATE TABLE imagens (
