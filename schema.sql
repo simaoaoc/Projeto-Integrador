@@ -5,7 +5,7 @@ CREATE TABLE usuarios (
   cep VARCHAR(9) NOT NULL,
   senha_hash VARCHAR(255) NOT NULL,
   criado_em DATETIME DEFAULT NOW() NOT NULL,
-  ativo ENUM("ativo", "inativo")
+  ativo ENUM("ativo", "inativo") DEFAULT  'Ativo';
 );
 
 CREATE TABLE ongs (
