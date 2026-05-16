@@ -43,6 +43,21 @@ nav button.navbar-toggler {
     object-fit: contain;
 }
 
+h1{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.titulo-quem p {
+    max-width: 850px;
+    margin: auto;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+}
+
 main#main-index {
     display: flex;
     flex-direction: column;
@@ -643,27 +658,7 @@ main.bg-blue .background-blue section.main-content-user input {
 ==================================== */
 
 .quem-somos-real {
-    background: #f3f3f3;
     min-height: 100vh;
-}
-
-.titulo-quem {
-    background: white;
-    text-align: center;
-    padding: 4rem 1rem 2rem;
-}
-
-.titulo-quem h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.titulo-quem p {
-    max-width: 850px;
-    margin: auto;
-    font-size: 1.3rem;
-    font-weight: 500;
 }
 
 .banner-quem img {
