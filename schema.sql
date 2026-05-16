@@ -5,7 +5,7 @@ CREATE TABLE usuarios (
   cep VARCHAR(9) NOT NULL,
   senha_hash VARCHAR(255) NOT NULL,
   criado_em DATETIME DEFAULT NOW() NOT NULL,
-  ativo ENUM("ativo", "inativo") DEFAULT  'Ativo';
+  ativo ENUM("ativo", "inativo") DEFAULT  'ativo'
 );
 
 CREATE TABLE ongs (
@@ -61,8 +61,8 @@ CREATE TABLE imagens (
   id_campanha INT,
   FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
   FOREIGN KEY (id_ong) REFERENCES ongs(id_ong),
-  FOREIGN KEY (campanha_id) REFERENCES campanhas(id_campanha) ON DELETE CASCADE,
- CHECK ((id_usuario IS NOT NULL) + (id_ong IS NOT NULL) + (campanha_id IS NOT NULL) = 1)
+  FOREIGN KEY (id_campanha) REFERENCES campanhas(id_campanha) ON DELETE CASCADE,
+ CHECK ((id_usuario IS NOT NULL) + (id_ong IS NOT NULL) + (id_campanha IS NOT NULL) = 1)
 );
 
 CREATE TABLE conversas(
@@ -85,4 +85,3 @@ CREATE TABLE mensagens(
   FOREIGN KEY (id_remetente) REFERENCES usuarios(id),
   FOREIGN KEY (id_conversa) REFERENCES conversas(id_conversa)
 );
-
