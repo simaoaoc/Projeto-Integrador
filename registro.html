@@ -49,22 +49,22 @@
             <div class="background-blue">
                 <section class="main-content-not-user">
                     <label for="name">Nome</label>
-                    <input type="text" name="name" id="name" placeholder="Ex: João">
-                    
+                    <input type="text" name="name" id="name" placeholder="Ex: João" required>
+
                     <label for="surname">Sobreome</label>
-                    <input type="text" name="surname" id="surname" placeholder="Ex: da Silva">
-                    
+                    <input type="text" name="surname" id="surname" placeholder="Ex: da Silva" required>
+
                     <label for="cep">CEP</label>
-                    <input type="text" name="cep" id="cep" placeholder="00000-000">
-                    
+                    <input type="text" name="cep" id="cep" placeholder="00000-000" required>
+
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" placeholder="seuemail@email.com">
+                    <input type="email" name="email" id="email" placeholder="seuemail@email.com" required>
 
                     <label for="password">Crie Sua Senha</label>
-                    <input type="password" name="password" id="password" placeholder="****">
+                    <input type="password" name="password" id="password" placeholder="****" required>
 
                     <label for="confirmpassword">Confirme Sua Senha</label>
-                    <input type="password" name="confirmpassword" id="confirmpassword" placeholder="****">
+                    <input type="password" name="confirmpassword" id="confirmpassword" placeholder="****" required>
                 </section>
             </div>
             <button type="submit">CRIAR CONTA</button>
@@ -80,6 +80,27 @@
             <img src="./images/shoes.png" alt="">
         </div>
     </footer>
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        if (params.get('erro') === 'campos') {
+            swal('Erro', 'Todos os campos são obrigatórios', 'error')
+                .then(() => {
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                });
+        }
+
+        if (params.get('erro') === 'senha') {
+            swal('Erro', 'As senhas não coincidem', 'error')
+                .then(() => {
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                });
+        }
+    </script>
 
 </body>
 

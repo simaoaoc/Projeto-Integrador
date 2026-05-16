@@ -3,41 +3,40 @@
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
 
+  include_once('config.php');
   session_start();
 
-  if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['password']))
+  if(!empty($_POST['email']) && !empty($_POST['password']))
   {
-	  include_once('config.php');
-          $email = $_POST['email'];
-	  $senha = hash('sha256', $_POST['password']);
+    $email = $_POST['email'];
+	$senha = $_POST['password'];
 
-	  print_r('Email: ' . $email);
-	  print_r('Senha: ' . $senha);
 
-	  $sql = "SELECT * FROM usuarios WHERE email = '$email' and senha_hash = '$senha'";
+	$stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = ?");
+	$stmt->bind_param("s", $email);
+	$stmt->execute();
+	$result = $stmt->get_result();
 
-	  $result = $conexao->query($sql);
 
-	  print_r($result);
+	$user = mysqli_fetch_assoc($result);
 
-	  if(mysqli_num_rows($result) < 1)
-	  {
-		  unset($_SESSION['email']);
-		  unset($_SESSION['senha']);
-		  header('Location: login.html');
-	  }
-	  else
-	  {
-		  $_SESSION['email'] = $email;
-		  $_SESSION['senha'] = $senha;
-		  header('Location: index.php');
-		  exit;
-	  }
+	if ($user && password_verify($senha, $user['senha_hash']))
+	{
+		$_SESSION['email'] = $email;
+		$_SESSION['id'] = $user['id'];
+		header('Location: index.php');
+	  	exit;
+	}
+	else
+	{
+		header('Location: login.html?erro=1');
+		exit;
+	}
 
   }
   else
   {
-    header('Location: login.html');
+    // header('Location: login.html');
     exit;
   }
 

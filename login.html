@@ -71,6 +71,15 @@
         </div>
     </footer>
 
+
+    <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('erro')) {
+        swal('Erro', 'Usuário ou senha inválidos', 'error');
+    }
+    </script>
+
 </body>
 
 </html>

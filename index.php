@@ -1,12 +1,11 @@
 <?php
 
   session_start();
-  if( (isset($_SESSION['email']) == false) and (isset($_SESSION['senha']) == false))
-  {
-    header('Location: login.html');
-	exit;
-  }
-  $logado = $_SESSION['email'];
+//   if( (isset($_SESSION['email']) == false) and (isset($_SESSION['senha']) == false))
+//   {
+//     header('Location: login.html');
+// 	exit;
+//   }
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +41,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 user">
+                <?php if (isset($_SESSION['email'])): $logado = $_SESSION['email'];?> <!-- Verifica qual menu exibir -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="doar.html">QUERO DOAR</a>
                     </li>
@@ -58,15 +58,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="user.html">INFORMAÇÕES DO USUÁRIO</a>
                     </li>
-                </ul>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 not-user">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./login.html">LOGIN</a>
+                        <a class="nav-link" href="logout.php">SAIR</a>
+                    </li>
+                </ul>
+                <?php else: ?> <!-- Verifica qual menu exibir -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./login.html">LOGIN</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./registro.html">CADASTRE-SE</a>
                     </li>
                 </ul>
+                <?php endif; ?> <!-- Verifica qual menu exibir -->
 
             </div>
         </div>
