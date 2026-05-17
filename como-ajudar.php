@@ -20,7 +20,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="shortcut icon" href="./images/logo-pra-quem-precisa.png" type="image/x-icon">
-    <title>Pra Quem Precisa</title>
+    <title>Como Ajudar - Pra Quem Precisa</title>
 </head>
 
 <body>
@@ -36,7 +36,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <?php if (isset($_SESSION['email'])): $logado = $_SESSION['email'];?> <!-- Verifica qual menu exibir -->
+				<?php if (isset($_SESSION['email'])): $logado = $_SESSION['email'];?> <!-- Verifica qual menu exibir -->
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="doar.php">QUERO DOAR</a>
@@ -52,6 +52,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="user.php">INFORMAÇÕES DO USUÁRIO</a>
+                    </li>
 				</ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -61,7 +62,7 @@
 
                 <?php else: ?> <!-- Verifica qual menu exibir -->
                 <ul class="navbar-nav mb-2 mb-lg-0">
-					<li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="como-ajudar.php">COMO AJUDAR</a>
                     </li>
                     <li class="nav-item">
@@ -82,58 +83,93 @@
                 </ul>
                 <?php endif; ?> <!-- Verifica qual menu exibir -->
 
+
             </div>
         </div>
     </nav>
-    <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="./images/home1.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="./images/home2.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="./images/home3.png" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
 
-    <main id="main-index">
-        <div class="center">
+    <main class="container py-5 como-ajudar-page">
 
-            
-            <h1>DOE ROUPAS E TRANSFORME VIDAS</h1>
-            
-			<h2>Bem-vindo <?php echo $logado; ?></h2>
-            <p>Cada peça de roupa pode fazer a diferença real na vida de alguém. Conectamos sua doação às necessidades
-                específicas de ONGs próximas, ajudando você a doar exatamente o que é mais necessário no momento. Faça parte
-                dessa corrente de solidariedade e transforme sua doação em cuidado, dignidade e oportunidade para quem mais
-                precisa.
-            </p>
+        <h1>COMO AJUDAR DOANDO ROUPAS E CALÇADOS</h1>
+        
+        <p class="lead">Em poucos passos, você conecta sua doação a quem realmente precisa perto de você.</p>
+        <img src="./images/home1.png" alt="Doação de roupas e calçados" class="img-fluid rounded shadow-sm">
+
+        <section class="content-section">
+            <h2>Como funciona a doação</h2>
+            <div class="steps-list">
+                <article>
+                    <h3>1. Cadastre sua peça</h3>
+                    <p>Informe o tipo de roupa ou calçado que deseja doar.</p>
+                </article>
+                <article>
+                    <h3>2. Adicione detalhes</h3>
+                    <p>Inclua tamanho, condição e outras informações importantes.</p>
+                </article>
+                <article>
+                    <h3>3. Encontre ONGs próximas</h3>
+                    <p>Mostramos instituições perto de você que precisam dessa peça.</p>
+                </article>
+                <article>
+                    <h3>4. Combine a entrega</h3>
+                    <p>Entre em contato e finalize sua doação diretamente com a ONG.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>O que doar (e o que evitar)</h2>
+            <div class="donation-guidelines">
+                <div class="guideline-card good">
+                    <h3>Pode Doar <span>✓</span></h3>
+                    <ul>
+                        <li>Roupas em bom estado</li>
+                        <li>Calçados utilizáveis</li>
+                        <li>Peças limpas</li>
+                        <li>Pares de sapatos</li>
+                    </ul>
+                </div>
+                <div class="guideline-card avoid">
+                    <h3>Evite Doar <span>✕</span></h3>
+                    <ul>
+                        <li>Roupas rasgadas</li>
+                        <li>Peças sujas</li>
+                        <li>Itens sem condições de uso</li>
+                        <li>Calçados sem par</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Prepare sua doação</h2>
+            <div class="steps-grid">
+                <article>
+                    <h3>1. Verifique o estado</h3>
+                    <p>Doe apenas o que você realmente usaria.</p>
+                </article>
+                <article>
+                    <h3>2. Higienize as peças</h3>
+                    <p>Lave e, se possível, passe as roupas antes de doar.</p>
+                </article>
+                <article>
+                    <h3>3. Separe por tipo</h3>
+                    <p>Agrupe roupas e calçados para facilitar a triagem.</p>
+                </article>
+                <article>
+                    <h3>4. Embale adequadamente</h3>
+                    <p>Use sacolas ou caixas para proteger os itens.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta-section text-center">
+            <p>Pronto para fazer a diferença?</p>
             <a href="doar.html" class="quero-doar">QUERO DOAR</a>
-            
-        </div>
+        </section>
     </main>
-        <footer>
+
+    <footer>
         <h4>Nossas Principais Necessidades</h4>
         <div>
             <img src="./images/flip-flops.png" alt="">

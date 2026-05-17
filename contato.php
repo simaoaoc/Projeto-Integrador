@@ -20,7 +20,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="shortcut icon" href="./images/logo-pra-quem-precisa.png" type="image/x-icon">
-    <title>Pra Quem Precisa</title>
+    <title>Contato - Pra Quem Precisa</title>
 </head>
 
 <body>
@@ -36,7 +36,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <?php if (isset($_SESSION['email'])): $logado = $_SESSION['email'];?> <!-- Verifica qual menu exibir -->
+				<?php if (isset($_SESSION['email'])): $logado = $_SESSION['email'];?> <!-- Verifica qual menu exibir -->
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="doar.php">QUERO DOAR</a>
@@ -52,6 +52,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="user.php">INFORMAÇÕES DO USUÁRIO</a>
+                    </li>
 				</ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -61,7 +62,7 @@
 
                 <?php else: ?> <!-- Verifica qual menu exibir -->
                 <ul class="navbar-nav mb-2 mb-lg-0">
-					<li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="como-ajudar.php">COMO AJUDAR</a>
                     </li>
                     <li class="nav-item">
@@ -81,59 +82,74 @@
                     </li>
                 </ul>
                 <?php endif; ?> <!-- Verifica qual menu exibir -->
-
             </div>
         </div>
     </nav>
-    <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="./images/home1.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="./images/home2.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="./images/home3.png" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
 
-    <main id="main-index">
-        <div class="center">
+    <main class="container py-5 contato-page">
+            <h1>FALE COM A GENTE</h1>
+            <p class="lead">Tem dúvidas, sugestões ou quer colaborar com o projeto? Veja abaixo como entrar em contato com a nossa equipe.</p>
+                <img src="./images/home3.png" alt="Equipe de contato" class="img-fluid rounded shadow-sm">
 
-            
-            <h1>DOE ROUPAS E TRANSFORME VIDAS</h1>
-            
-			<h2>Bem-vindo <?php echo $logado; ?></h2>
-            <p>Cada peça de roupa pode fazer a diferença real na vida de alguém. Conectamos sua doação às necessidades
-                específicas de ONGs próximas, ajudando você a doar exatamente o que é mais necessário no momento. Faça parte
-                dessa corrente de solidariedade e transforme sua doação em cuidado, dignidade e oportunidade para quem mais
-                precisa.
-            </p>
+        <section class="content-section">
+            <h2>Escolha o canal que deseja falar conosco:</h2>
+            <div class="contact-channels">
+                <article class="channel-card">
+                    <div class="channel-icon email-icon">
+                        <span>✉</span>
+                    </div>
+                    <h3>E-mail</h3>
+                    <p>Envie sua dúvida ou sugestão por email</p>
+                    <a href="mailto:contato@praquemprecisa.com" class="contact-link">contato@praquemprecisa.com</a>
+                </article>
+                <article class="channel-card">
+                    <div class="channel-icon whatsapp-icon">
+                        <img src="./images/whatsapp.jpg" alt="WhatsApp">
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Fale com a gente de forma rápida e direta</p>
+                    <a href="https://wa.me/551184022922" target="_blank" class="contact-link">(11) 84002-8922</a>
+                </article>
+                <article class="channel-card">
+                    <div class="channel-icon instagram-icon">
+                        <img src="./images/instagram.jpg" alt="Instagram">
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>Acompanhe o projeto e mande uma mensagem</p>
+                    <a href="https://instagram.com/praquemprecisa" target="_blank" class="contact-link">@praquemprecisa</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section faq-section">
+            <h2>Dúvidas Frequentes</h2>
+            <div class="faq-list">
+                <article class="faq-item">
+                    <h3>Como faço para doar uma peça?</h3>
+                    <p>Acesse a página "Quero doar", cadastre o item e encontre ONGs próximas.</p>
+                </article>
+                <article class="faq-item">
+                    <h3>Preciso entregar a doação pessoalmente?</h3>
+                    <p>Sim. A entrega é combinada diretamente com a ONG.</p>
+                </article>
+                <article class="faq-item">
+                    <h3>Posso doar qualquer tipo de roupa?</h3>
+                    <p>Sim, mas dê preferência a peças em bom estado e utilizáveis.</p>
+                </article>
+                <article class="faq-item">
+                    <h3>Como as ONGs são exibidas?</h3>
+                    <p>Com base no CEP informado, priorizando proximidade.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta-section text-center">
+            <p>Pronto para fazer a diferença?</p>
             <a href="doar.html" class="quero-doar">QUERO DOAR</a>
-            
-        </div>
+        </section>
     </main>
-        <footer>
+
+    <footer>
         <h4>Nossas Principais Necessidades</h4>
         <div>
             <img src="./images/flip-flops.png" alt="">
