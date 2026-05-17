@@ -275,3 +275,67 @@ SELECT
   id
 FROM usuarios
 WHERE nome = 'Barcus';
+
+INSERT INTO imagens (tipo, url, id_ong)
+SELECT
+  'ong',
+  'https://i.imgur.com/SRlk22r.jpeg',
+  id_ong
+FROM ongs
+WHERE nome_fantasia = 'Instituto Mãos de Faerûn';
+
+INSERT INTO imagens (tipo, url, id_ong)
+SELECT
+  'ong',
+  'https://i.imgur.com/aI4BfS8.jpeg',
+  id_ong
+FROM ongs
+WHERE nome_fantasia = 'Projeto Roupas para Baldur''s Gate';
+
+INSERT INTO imagens (tipo, url, id_ong)
+SELECT
+  'ong',
+  'https://i.imgur.com/6D13XUI.jpeg',
+  id_ong
+FROM ongs
+WHERE nome_fantasia = 'Casa Solidária Shadowheart';
+
+INSERT INTO imagens (tipo, url, id_ong)
+SELECT
+  'ong',
+  'https://i.imgur.com/0bY6Lqi.png',
+  id_ong
+FROM ongs
+WHERE nome_fantasia = 'Karlach Aquece Vidas';
+
+INSERT INTO imagens (tipo, url, id_ong)
+SELECT
+  'ong',
+  'https://i.imgur.com/QZJ7ND0.jpeg',
+  id_ong
+FROM ongs
+WHERE nome_fantasia = 'Rede Solidária Vale do Sol';
+
+INSERT INTO imagens (tipo, url, id_ong)
+SELECT
+  'ong',
+  'https://i.imgur.com/AvL9OeT.png',
+  id_ong
+FROM ongs
+WHERE nome_fantasia = 'Harpistas do Bem Coleta Têxtil';
+
+INSERT INTO imagens (tipo, url, id_ong)
+SELECT
+  'ong',
+  'https://i.imgur.com/16DTgqL.jpeg',
+  id_ong
+FROM ongs
+WHERE nome_fantasia = 'Instituto Gale de Inclusão Social';
+
+INSERT INTO imagens (tipo, url, id_ong)
+SELECT
+  'ong',
+  'https://i.imgur.com/3moAFmv.jpeg',
+  id_ong
+FROM ongs
+WHERE nome_fantasia = 'Astarion Recomeço Comunitário';
