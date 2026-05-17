@@ -1,4 +1,5 @@
 <?php
+  include_once('config.php');
   session_start();
 ?>
 
@@ -92,11 +93,47 @@
             <div class="background-blue">
                 <section class="main-content-user">
                     <article>
-                        <img src="./images/user.png" alt="">
+					
+							<?php
+					    error_reporting(E_ALL);
+					    ini_set('display_errors', 1);
+					
+					    $stmt = $conexao->prepare("
+					        SELECT url 
+					        FROM imagens i 
+					        JOIN usuarios u ON i.id_usuario = u.id 
+					        WHERE u.email = ? 
+					        LIMIT 1;
+					    ");
+					
+					    if(!$stmt){
+					        die("Erro no prepare: " . $conexao->error);
+					    }
+					
+					    $stmt->bind_param("s", $_SESSION['email']);
+					
+					    if(!$stmt->execute()){
+					        die("Erro no execute: " . $stmt->error);
+					    }
+					
+					    $result = $stmt->get_result();
+					
+					    if($result->num_rows == 0){
+							$url = "images/user.png";
+					    }
+						else
+						{
+					    	$dados = $result->fetch_assoc();
+					    	$url = $dados['url'];
+						}
+					?>
+					
+					<img src="<?php echo $url; ?>" alt="">	
+
                     </article>
                     <article>
                         <label for="name">Nome</label>
-                        <input type="text" name="name" id="name" placeholder="Ex: João">
+                        <input type="text" name="name" id="name">
 
                         <label for="surname">Sobreome</label>
                         <input type="text" name="surname" id="surname" placeholder="Ex: da Silva">
