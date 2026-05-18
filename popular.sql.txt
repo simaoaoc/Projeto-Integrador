@@ -1,0 +1,18 @@
+USE pra_quem_precisa;
+
+-- Insere as categorias de roupas (os filtros do site)
+INSERT INTO categorias (nome_categoria) VALUES 
+('Roupas de Inverno'), 
+('Roupas de Verão'), 
+('Calçados'), 
+('Infantil');
+
+-- Insere um usuário doador para podermos associar as roupas a alguém
+INSERT INTO usuarios (nome, email, senha, telefone) VALUES 
+('Doador Exemplo', 'doador@email.com', '123456', '11999998888');
+
+-- Insere as doações ligadas ao Usuário 1 (Doador Exemplo) e às categorias acima
+INSERT INTO doacoes (titulo, descricao, tamanho, fk_usuario, fk_categoria) VALUES 
+('Casaco Azul', 'Casaco de lã muito conservado', 'G', 1, 1),
+('Tênis Esportivo', 'Tênis número 40 para corrida', '40', 1, 3),
+('Camiseta Branca', 'Camiseta básica de algodão', 'M', 1, 2);
