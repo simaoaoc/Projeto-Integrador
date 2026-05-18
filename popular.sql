@@ -339,3 +339,19 @@ SELECT
   id_ong
 FROM ongs
 WHERE nome_fantasia = 'Astarion Recomeço Comunitário';
+
+INSERT INTO imagens (tipo, url, id_ong)
+SELECT
+  'ong',
+  'https://i.imgur.com/Vtyl699.jpeg',
+  id_ong
+FROM ongs
+WHERE nome_fantasia = 'Campanha Roupa Viva Guarulhos';
+
+INSERT INTO imagens (tipo, url, id_ong)
+SELECT
+  'ong',
+  'https://i.imgur.com/FOS8SEX.jpeg',
+  id_ong
+FROM ongs
+WHERE nome_fantasia = 'ONG Caminhos do Amanhã';
