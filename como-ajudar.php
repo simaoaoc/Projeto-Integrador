@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -22,7 +26,7 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">
+            <a class="navbar-brand" href="./index.php">
                 <img src="./images/logo-pra-quem-precisa.png" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -31,23 +35,55 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 user">
+
+				<?php if (isset($_SESSION['email'])): $logado = $_SESSION['email'];?> <!-- Verifica qual menu exibir -->
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="doar.html">QUERO DOAR</a>
+                        <a class="nav-link" aria-current="page" href="doar.php">QUERO DOAR</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">COMO AJUDAR</a>
+                        <a class="nav-link" href="como-ajudar.php">COMO AJUDAR</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="quem-somos.html">QUEM SOMOS</a>
+                        <a class="nav-link" href="quem-somos.php">QUEM SOMOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contato.html">CONTATO</a>
+                        <a class="nav-link" href="contato.php">CONTATO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="user.html">INFORMAÇÕES DO USUÁRIO</a>
+                        <a class="nav-link" href="user.php">INFORMAÇÕES DO USUÁRIO</a>
+                    </li>
+				</ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link logout-btn" href="logout.php">SAIR</a>
                     </li>
                 </ul>
+
+                <?php else: ?> <!-- Verifica qual menu exibir -->
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="como-ajudar.php">COMO AJUDAR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quem-somos.php">QUEM SOMOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.php">CONTATO</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./login.html">LOGIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./registro.html">CADASTRE-SE</a>
+                    </li>
+                </ul>
+                <?php endif; ?> <!-- Verifica qual menu exibir -->
+
+
             </div>
         </div>
     </nav>
