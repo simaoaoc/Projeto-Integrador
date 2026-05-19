@@ -92,7 +92,7 @@
       ini_set('display_errors', 1);
 			
       $stmt = $conexao->prepare("
-        SELECT url 
+        SELECT u.nome, u.cep, i.url
         FROM imagens i 
         JOIN usuarios u ON i.id_usuario = u.id 
         WHERE u.email = ? 
@@ -110,28 +110,11 @@
       }
 					
       $result = $stmt->get_result();
-					
-      if($result->num_rows == 0){
-		$url = "images/user.png";
-      }
-      else
-    {
-    	$dados = $result->fetch_assoc();
-    	$url = $dados['url'];
-	}
-	$stmt = $conexao->prepare("SELECT nome FROM usuarios WHERE email = ?");
-    $stmt->bind_param("s", $_SESSION['email']);
-	$stmt->execute();
-    $result = $stmt->get_result();
-	$dados = $result->fetch_assoc();
-	$nome = $dados['nome'];
-
-	$stmt = $conexao->prepare("SELECT cep FROM usuarios WHERE email = ?");
-    $stmt->bind_param("s", $_SESSION['email']);
-	$stmt->execute();
-    $result = $stmt->get_result();
-	$dados = $result->fetch_assoc();
-	$cep = $dados['cep'];
+	  $dados = $result->fetch_assoc();
+	  
+	  $nome = $dados['nome'];
+	  $cep = $dados['cep'];
+      $url = $dados['url'] ?? "images/user.png";
 
 	?>
     <main class="bg-blue">
