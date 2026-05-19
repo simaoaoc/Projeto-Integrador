@@ -1,4 +1,5 @@
 ﻿<?php
+  include_once('config.php');
   session_start();
 ?>
 
@@ -39,7 +40,7 @@
 				<?php if (isset($_SESSION['email'])): $logado = $_SESSION['email'];?> <!-- Verifica qual menu exibir -->
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="doar.html">QUERO DOAR</a>
+                        <a class="nav-link" aria-current="page" href="doar.php">QUERO DOAR</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="como-ajudar.php">COMO AJUDAR</a>
@@ -87,6 +88,20 @@
         </div>
     </nav>
 
+
+<?php
+$stmt = $conexao->prepare("
+SELECT o.id_ong, o.nome_fantasia, o.whatsapp, o.instagram, i.url
+FROM ongs o
+LEFT JOIN imagens i
+on o.id_ong = i.id_ong
+ORDER BY o.id_ong;");
+
+$stmt->execute();
+$result = $stmt->get_result();
+$ong = $result->fetch_assoc();
+
+?>
     <main class="donate-page pb-5">
         <section class="container py-4">
             <h1>SELECIONE A ONG E FAÇA SUA DOAÇÃO</h1>
@@ -101,10 +116,11 @@
 
                 <div class="row g-3">
                     <!-- ONG cards -->
-                    <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-4">
                         <div class="card ong-card rounded-4 shadow-sm border-0">
                             <div class="card-body text-center">
-                                <h3 class="ong-title">ONG 1</h3>
+                                <h3 class="ong-title"><?php echo $ong['nome_fantasia'] ?></h3>
+								<a href="id_ong?<?php echo $ong['id_ong'] ?>"><img src="<?php echo $ong['url'] ?>" class='img-fluid ong-img'></a>
                                 <p class="ong-distance text-secondary mb-3"><i
                                         class="bi bi-geo-alt-fill text-danger"></i> 2,3 km</p>
                                 <h5 class="fw-bold">Necessidades</h5>
@@ -115,20 +131,23 @@
                                 </ul>
                                 <p class="mb-2">Entre em Contato</p>
                                 <div class="d-flex justify-content-center gap-3">
-                                    <a href="#" class="contact-icon text-decoration-none"><img
+                                    <a href="<?php echo $ong['instagram'] ?>" class="contact-icon text-decoration-none"><img
                                             src="./images/instagram.jpg" alt="Instagram" class="contact-icon-img"></a>
-                                    <a href="#" class="contact-icon text-decoration-none"><img
+                                    <a href="<?php echo $ong['whatsapp'] ?>" class="contact-icon text-decoration-none"><img
                                             src="./images/whatsapp.jpg" alt="WhatsApp" class="contact-icon-img"></a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
+					</div>
+
+					<?php $ong = $result->fetch_assoc(); ?>
+					<div class="col-12 col-sm-6 col-lg-4">
                         <div class="card ong-card rounded-4 shadow-sm border-0">
                             <div class="card-body text-center">
-                                <h3 class="ong-title">ONG 2</h3>
+                                <h3 class="ong-title"><?php echo $ong['nome_fantasia'] ?></h3>
+								<a href="id_ong?<?php echo $ong['id_ong'] ?>"><img src="<?php echo $ong['url'] ?>" class='img-fluid ong-img'></a>
                                 <p class="ong-distance text-secondary mb-3"><i
-                                        class="bi bi-geo-alt-fill text-danger"></i> 5 km</p>
+                                        class="bi bi-geo-alt-fill text-danger"></i> 2,3 km</p>
                                 <h5 class="fw-bold">Necessidades</h5>
                                 <ul class="list-unstyled ong-list mb-3">
                                     <li><span class="dot bg-danger"></span> Blusa de Moletom</li>
@@ -137,20 +156,24 @@
                                 </ul>
                                 <p class="mb-2">Entre em Contato</p>
                                 <div class="d-flex justify-content-center gap-3">
-                                    <a href="#" class="contact-icon text-decoration-none"><img
+                                    <a href="<?php echo $ong['instagram'] ?>" class="contact-icon text-decoration-none"><img
                                             src="./images/instagram.jpg" alt="Instagram" class="contact-icon-img"></a>
-                                    <a href="#" class="contact-icon text-decoration-none"><img
+                                    <a href="<?php echo $ong['whatsapp'] ?>" class="contact-icon text-decoration-none"><img
                                             src="./images/whatsapp.jpg" alt="WhatsApp" class="contact-icon-img"></a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
+					</div>
+
+					<?php $ong = $result->fetch_assoc(); ?>
+
+					<div class="col-12 col-sm-6 col-lg-4">
                         <div class="card ong-card rounded-4 shadow-sm border-0">
                             <div class="card-body text-center">
-                                <h3 class="ong-title">ONG 3</h3>
+                                <h3 class="ong-title"><?php echo $ong['nome_fantasia'] ?></h3>
+								<a href="id_ong?<?php echo $ong['id_ong'] ?>"><img src="<?php echo $ong['url'] ?>" class='img-fluid ong-img'></a>
                                 <p class="ong-distance text-secondary mb-3"><i
-                                        class="bi bi-geo-alt-fill text-danger"></i> 10,2 km</p>
+                                        class="bi bi-geo-alt-fill text-danger"></i> 2,3 km</p>
                                 <h5 class="fw-bold">Necessidades</h5>
                                 <ul class="list-unstyled ong-list mb-3">
                                     <li><span class="dot bg-danger"></span> Blusa de Moletom</li>
@@ -159,20 +182,24 @@
                                 </ul>
                                 <p class="mb-2">Entre em Contato</p>
                                 <div class="d-flex justify-content-center gap-3">
-                                    <a href="#" class="contact-icon text-decoration-none"><img
+                                    <a href="<?php echo $ong['instagram'] ?>" class="contact-icon text-decoration-none"><img
                                             src="./images/instagram.jpg" alt="Instagram" class="contact-icon-img"></a>
-                                    <a href="#" class="contact-icon text-decoration-none"><img
+                                    <a href="<?php echo $ong['whatsapp'] ?>" class="contact-icon text-decoration-none"><img
                                             src="./images/whatsapp.jpg" alt="WhatsApp" class="contact-icon-img"></a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
+					</div>
+
+					<?php $ong = $result->fetch_assoc(); ?>
+
+					<div class="col-12 col-sm-6 col-lg-4">
                         <div class="card ong-card rounded-4 shadow-sm border-0">
                             <div class="card-body text-center">
-                                <h3 class="ong-title">ONG 4</h3>
+                                <h3 class="ong-title"><?php echo $ong['nome_fantasia'] ?></h3>
+								<a href="id_ong?<?php echo $ong['id_ong'] ?>"><img src="<?php echo $ong['url'] ?>" class='img-fluid ong-img'></a>
                                 <p class="ong-distance text-secondary mb-3"><i
-                                        class="bi bi-geo-alt-fill text-danger"></i> 12 km</p>
+                                        class="bi bi-geo-alt-fill text-danger"></i> 2,3 km</p>
                                 <h5 class="fw-bold">Necessidades</h5>
                                 <ul class="list-unstyled ong-list mb-3">
                                     <li><span class="dot bg-danger"></span> Blusa de Moletom</li>
@@ -181,20 +208,24 @@
                                 </ul>
                                 <p class="mb-2">Entre em Contato</p>
                                 <div class="d-flex justify-content-center gap-3">
-                                    <a href="#" class="contact-icon text-decoration-none"><img
+                                    <a href="<?php echo $ong['instagram'] ?>" class="contact-icon text-decoration-none"><img
                                             src="./images/instagram.jpg" alt="Instagram" class="contact-icon-img"></a>
-                                    <a href="#" class="contact-icon text-decoration-none"><img
+                                    <a href="<?php echo $ong['whatsapp'] ?>" class="contact-icon text-decoration-none"><img
                                             src="./images/whatsapp.jpg" alt="WhatsApp" class="contact-icon-img"></a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
+					</div>
+
+					<?php $ong = $result->fetch_assoc(); ?>
+
+					<div class="col-12 col-sm-6 col-lg-4">
                         <div class="card ong-card rounded-4 shadow-sm border-0">
                             <div class="card-body text-center">
-                                <h3 class="ong-title">ONG 5</h3>
+                                <h3 class="ong-title"><?php echo $ong['nome_fantasia'] ?></h3>
+								<a href="id_ong?<?php echo $ong['id_ong'] ?>"><img src="<?php echo $ong['url'] ?>" class='img-fluid ong-img'></a>
                                 <p class="ong-distance text-secondary mb-3"><i
-                                        class="bi bi-geo-alt-fill text-danger"></i> 12,5 km</p>
+                                        class="bi bi-geo-alt-fill text-danger"></i> 2,3 km</p>
                                 <h5 class="fw-bold">Necessidades</h5>
                                 <ul class="list-unstyled ong-list mb-3">
                                     <li><span class="dot bg-danger"></span> Blusa de Moletom</li>
@@ -203,20 +234,24 @@
                                 </ul>
                                 <p class="mb-2">Entre em Contato</p>
                                 <div class="d-flex justify-content-center gap-3">
-                                    <a href="#" class="contact-icon text-decoration-none"><img
+                                    <a href="<?php echo $ong['instagram'] ?>" class="contact-icon text-decoration-none"><img
                                             src="./images/instagram.jpg" alt="Instagram" class="contact-icon-img"></a>
-                                    <a href="#" class="contact-icon text-decoration-none"><img
+                                    <a href="<?php echo $ong['whatsapp'] ?>" class="contact-icon text-decoration-none"><img
                                             src="./images/whatsapp.jpg" alt="WhatsApp" class="contact-icon-img"></a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
+					</div>
+
+					<?php $ong = $result->fetch_assoc(); ?>
+
+					<div class="col-13 col-sm-6 col-lg-4">
                         <div class="card ong-card rounded-4 shadow-sm border-0">
                             <div class="card-body text-center">
-                                <h3 class="ong-title">ONG 6</h3>
+                                <h3 class="ong-title"><?php echo $ong['nome_fantasia'] ?></h3>
+								<a href="id_ong?<?php echo $ong['id_ong'] ?>"><img src="<?php echo $ong['url'] ?>" class='img-fluid'></a>
                                 <p class="ong-distance text-secondary mb-3"><i
-                                        class="bi bi-geo-alt-fill text-danger"></i> 14 km</p>
+                                        class="bi bi-geo-alt-fill text-danger"></i> 2,3 km</p>
                                 <h5 class="fw-bold">Necessidades</h5>
                                 <ul class="list-unstyled ong-list mb-3">
                                     <li><span class="dot bg-danger"></span> Blusa de Moletom</li>
@@ -225,102 +260,18 @@
                                 </ul>
                                 <p class="mb-2">Entre em Contato</p>
                                 <div class="d-flex justify-content-center gap-3">
-                                    <a href="#" class="contact-icon text-decoration-none"><img
+                                    <a href="<?php echo $ong['instagram'] ?>" class="contact-icon text-decoration-none"><img
                                             src="./images/instagram.jpg" alt="Instagram" class="contact-icon-img"></a>
-                                    <a href="#" class="contact-icon text-decoration-none"><img
+                                    <a href="<?php echo $ong['whatsapp'] ?>" class="contact-icon text-decoration-none"><img
                                             src="./images/whatsapp.jpg" alt="WhatsApp" class="contact-icon-img"></a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="card ong-card rounded-4 shadow-sm border-0">
-                            <div class="card-body text-center">
-                                <h3 class="ong-title">ONG 7</h3>
-                                <p class="ong-distance text-secondary mb-3"><i
-                                        class="bi bi-geo-alt-fill text-danger"></i> 14,5 km</p>
-                                <h5 class="fw-bold">Necessidades</h5>
-                                <ul class="list-unstyled ong-list mb-3">
-                                    <li><span class="dot bg-danger"></span> Blusa de Moletom</li>
-                                    <li><span class="dot bg-warning"></span> Bermuda</li>
-                                    <li><span class="dot bg-success"></span> Camiseta</li>
-                                </ul>
-                                <p class="mb-2">Entre em Contato</p>
-                                <div class="d-flex justify-content-center gap-3">
-                                    <a href="#" class="contact-icon text-decoration-none"><img
-                                            src="./images/instagram.jpg" alt="Instagram" class="contact-icon-img"></a>
-                                    <a href="#" class="contact-icon text-decoration-none"><img
-                                            src="./images/whatsapp.jpg" alt="WhatsApp" class="contact-icon-img"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="card ong-card rounded-4 shadow-sm border-0">
-                            <div class="card-body text-center">
-                                <h3 class="ong-title">ONG 8</h3>
-                                <p class="ong-distance text-secondary mb-3"><i
-                                        class="bi bi-geo-alt-fill text-danger"></i> 15 km</p>
-                                <h5 class="fw-bold">Necessidades</h5>
-                                <ul class="list-unstyled ong-list mb-3">
-                                    <li><span class="dot bg-danger"></span> Blusa de Moletom</li>
-                                    <li><span class="dot bg-warning"></span> Bermuda</li>
-                                    <li><span class="dot bg-success"></span> Camiseta</li>
-                                </ul>
-                                <p class="mb-2">Entre em Contato</p>
-                                <div class="d-flex justify-content-center gap-3">
-                                    <a href="#" class="contact-icon text-decoration-none"><img
-                                            src="./images/instagram.jpg" alt="Instagram" class="contact-icon-img"></a>
-                                    <a href="#" class="contact-icon text-decoration-none"><img
-                                            src="./images/whatsapp.jpg" alt="WhatsApp" class="contact-icon-img"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="card ong-card rounded-4 shadow-sm border-0">
-                            <div class="card-body text-center">
-                                <h3 class="ong-title">ONG 9</h3>
-                                <p class="ong-distance text-secondary mb-3"><i
-                                        class="bi bi-geo-alt-fill text-danger"></i> 18 km</p>
-                                <h5 class="fw-bold">Necessidades</h5>
-                                <ul class="list-unstyled ong-list mb-3">
-                                    <li><span class="dot bg-danger"></span> Blusa de Moletom</li>
-                                    <li><span class="dot bg-warning"></span> Bermuda</li>
-                                    <li><span class="dot bg-success"></span> Camiseta</li>
-                                </ul>
-                                <p class="mb-2">Entre em Contato</p>
-                                <div class="d-flex justify-content-center gap-3">
-                                    <a href="#" class="contact-icon text-decoration-none"><img
-                                            src="./images/instagram.jpg" alt="Instagram" class="contact-icon-img"></a>
-                                    <a href="#" class="contact-icon text-decoration-none"><img
-                                            src="./images/whatsapp.jpg" alt="WhatsApp" class="contact-icon-img"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="card ong-card rounded-4 shadow-sm border-0">
-                            <div class="card-body text-center">
-                                <h3 class="ong-title">ONG 10</h3>
-                                <p class="ong-distance text-secondary mb-3"><i
-                                        class="bi bi-geo-alt-fill text-danger"></i> 20 km</p>
-                                <h5 class="fw-bold">Necessidades</h5>
-                                <ul class="list-unstyled ong-list mb-3">
-                                    <li><span class="dot bg-danger"></span> Blusa de Moletom</li>
-                                    <li><span class="dot bg-warning"></span> Bermuda</li>
-                                    <li><span class="dot bg-success"></span> Camiseta</li>
-                                </ul>
-                                <p class="mb-2">Entre em Contato</p>
-                                <div class="d-flex justify-content-center gap-3">
-                                    <a href="#" class="contact-icon text-decoration-none"><img
-                                            src="./images/instagram.jpg" alt="Instagram" class="contact-icon-img"></a>
-                                    <a href="#" class="contact-icon text-decoration-none"><img
-                                            src="./images/whatsapp.jpg" alt="WhatsApp" class="contact-icon-img"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+					</div>
+
+					<?php $ong = $result->fetch_assoc(); ?>
+
+
                 </div>
             </div>
         </section>
