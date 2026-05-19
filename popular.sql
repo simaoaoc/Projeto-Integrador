@@ -139,3 +139,10 @@ INSERT INTO imagens (tipo, url, id_ong) VALUES
 INSERT INTO imagens (tipo, url, id_usuario) VALUES
 ('perfil', 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde', 1),
 ('perfil', 'https://images.unsplash.com/photo-1494790108377-be9c29b29330', 2);
+
+INSERT INTO imagens (tipo, url, id_campanha) VALUES
+('campanha', 'https://i.imgur.com/PgZqZui.jpeg', 1),
+('campanha', 'https://i.imgur.com/S6wIVen.jpeg', 2),
+('campanha', 'https://i.imgur.com/xZWLMK9.jpeg', 3),
+('campanha', 'https://i.imgur.com/3hx5cUs.jpeg', 4),
+('campanha', 'https://i.imgur.com/u8vjlYZ.jpeg', 5);
