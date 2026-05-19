@@ -129,7 +129,7 @@
                 dessa corrente de solidariedade e transforme sua doação em cuidado, dignidade e oportunidade para quem mais
                 precisa.
             </p>
-            <a href="doar.html" class="quero-doar">QUERO DOAR</a>
+            <a href="doar.php" class="quero-doar">QUERO DOAR</a>
             
         </div>
     </main>
