@@ -87,65 +87,70 @@
         </div>
     </nav>
 
+	<?php
+      error_reporting(E_ALL);
+      ini_set('display_errors', 1);
+			
+      $stmt = $conexao->prepare("
+        SELECT url 
+        FROM imagens i 
+        JOIN usuarios u ON i.id_usuario = u.id 
+        WHERE u.email = ? 
+        LIMIT 1;
+      ");
+					
+      if(!$stmt){
+        die("Erro no prepare: " . $conexao->error);
+      }
+					
+      $stmt->bind_param("s", $_SESSION['email']);
+					
+      if(!$stmt->execute()){
+        die("Erro no execute: " . $stmt->error);
+      }
+					
+      $result = $stmt->get_result();
+					
+      if($result->num_rows == 0){
+		$url = "images/user.png";
+      }
+      else
+    {
+    	$dados = $result->fetch_assoc();
+    	$url = $dados['url'];
+	}
+	$stmt = $conexao->prepare("SELECT nome FROM usuarios WHERE email = ?");
+    $stmt->bind_param("s", $_SESSION['email']);
+	$stmt->execute();
+    $result = $stmt->get_result();
+	$dados = $result->fetch_assoc();
+	$nome = $dados['nome'];
+
+	$stmt = $conexao->prepare("SELECT cep FROM usuarios WHERE email = ?");
+    $stmt->bind_param("s", $_SESSION['email']);
+	$stmt->execute();
+    $result = $stmt->get_result();
+	$dados = $result->fetch_assoc();
+	$cep = $dados['cep'];
+
+	?>
     <main class="bg-blue">
         <h1>INFORMAÇÕES</h1>
         <form action="#" method="post">
             <div class="background-blue">
                 <section class="main-content-user">
                     <article>
-					
-							<?php
-					    error_reporting(E_ALL);
-					    ini_set('display_errors', 1);
-					
-					    $stmt = $conexao->prepare("
-					        SELECT url 
-					        FROM imagens i 
-					        JOIN usuarios u ON i.id_usuario = u.id 
-					        WHERE u.email = ? 
-					        LIMIT 1;
-					    ");
-					
-					    if(!$stmt){
-					        die("Erro no prepare: " . $conexao->error);
-					    }
-					
-					    $stmt->bind_param("s", $_SESSION['email']);
-					
-					    if(!$stmt->execute()){
-					        die("Erro no execute: " . $stmt->error);
-					    }
-					
-					    $result = $stmt->get_result();
-					
-					    if($result->num_rows == 0){
-							$url = "images/user.png";
-					    }
-						else
-						{
-					    	$dados = $result->fetch_assoc();
-					    	$url = $dados['url'];
-						}
-					?>
-					
-					<img src="<?php echo $url; ?>" alt="">	
-
+						<img src="<?php echo $url; ?>" alt="">	
                     </article>
                     <article>
                         <label for="name">Nome</label>
-                        <input type="text" name="name" id="name">
-
-                        <label for="surname">Sobreome</label>
-                        <input type="text" name="surname" id="surname" placeholder="Ex: da Silva">
-
-                        <label for="cpf">CPF</label>
-                        <input type="number" name="cpf" id="cpf" placeholder="000.000.000-00" readonly>
+                        <input type="text" name="name" id="name" placeholder="<?php echo $nome ?>">
 
                         <label for="cep">CEP</label>
-                        <input type="number" name="cep" id="cep" placeholder="00000-000">
+                        <input type="number" name="cep" id="cep" placeholder="<?php echo $cep ?>">
 
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" placeholder="seuemail@email.com">
+                        <input type="email" name="email" id="email" placeholder="<?php echo $_SESSION['email'] ?>">
                     </article>
 
                 </section>
