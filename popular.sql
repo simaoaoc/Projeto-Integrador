@@ -1,7 +1,7 @@
 ﻿
 INSERT INTO usuarios (nome, email, cep, senha_hash, ativo) VALUES
-('Astarion', 'astarion.szarr@faerunmail.com', '01001-000', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
-('Shadowheart', 'shadowheart.shar@moonmail.net', '11013-201', '.vCvj6OHhk9SMjEIS3QGSVGaFfam6S4lrZdbtC', 'ativo'),
+('Astarion', 'astarion.szarr@faerunmail.com', '01001-000', '$2y$12$bNyB3V21.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
+('Shadowheart', 'shadowheart.shar@moonmail.net', '11013-201', '$2y$12$F2JfwDigVRlEgjj.vCvj6OHhk9SMjEIS3QGSVGaFfam6S4lrZdbtC', 'ativo'),
 ('Gale', 'gale.dekarios@waterdeep.org', '13010-001', '/vU6NrdxWdM.VGBeQtviLukDyAfQU20.GvqcNdOwATe', 'ativo'),
 ('Laezel', 'laezel.kithrak@creche.gith', '12210-000', '/rsZB/oeqi/5LjElO8o2FiR6S7HimIqXrw1PsQ/abaLisszO', 'ativo'),
 ('Wyll', 'wyll.ravengard@baldursgate.gov', '14010-000', '/7xMUberRHYvJL28c7mdFvA7lO3vK59pB17N3q', 'ativo'),
@@ -25,7 +25,7 @@ INSERT INTO ongs (nome_fantasia, cnpj, cep, site, instagram, whatsapp, status_ap
 ('Karlach Aquece Vidas', '12.345.678/0001-03', '04533-010', 'www.karlachaquece.com', '@karlachaquece', '11999990003', 'Aprovada'),
 ('Rede Solidaria Vale do Sol', '12.345.678/0001-04', '13010-001', 'www.valedosol.org', '@valedosolsolidario', '19999990004', 'Aprovada'),
 ('Harpistas do Bem Coleta Textile', '12.345.678/0001-05', '11060-001', 'www.harpistasdobem.org', '@harpistasbem', '13999990005', 'Aprovada'),
-('ONG Aquecendo Coracoes', '12.345.678/0001-06', '06600-000', 'www.aquecendocoracoes.org', '@aquecendocoracoes', '11988880001', 'Aprovada');
+('Astarion Recomeço Comunitário', '12.345.678/0001-06', '06600-000', 'www.aquecendocoracoes.org', '@aquecendocoracoes', '11988880001', 'Aprovada');
 
 -- ====================================================================
 -- 5. INSERIR CAMPANHAS PARA AS ONGS
@@ -36,7 +36,7 @@ INSERT INTO campanhas (id_ong, titulo, descrição, status, criado_em) VALUES
 (3, 'Karlach esquenta sua noite', 'Precisamos de roupas pesadas.', 'Aberta', NOW()),
 (4, 'Campanha Metropolitana de Jandira', 'Doações gerais de roupas e calçados.', 'Aberta', NOW()),
 (5, 'Passos Quentes em Carapicuiba', 'Arrecadação de meias e calçados infantis.', 'Aberta', NOW()),
-(6, 'Campanha Metropolitana de Jandira', 'Doações gerais de roupas e calçados.', 'Aberta', NOW());
+(6, 'Astarion Recomeço Comunitário', 'Doações gerais de roupas e calçados.', 'Aberta', NOW());
 
 
 INSERT INTO tipo_itens (nome, descrição, unidade_medida, tamanho) VALUES
@@ -67,7 +67,8 @@ INSERT INTO imagens (tipo, url, id_ong) VALUES
 ('ong', 'https://i.imgur.com/6D13XUI.jpeg', 2),
 ('ong', 'https://i.imgur.com/0bY6Lqi.png', 3),
 ('ong', 'https://i.imgur.com/QZJ7ND0.jpeg', 4),
-('ong', 'https://i.imgur.com/AvL9OeT.png', 5);
+('ong', 'https://i.imgur.com/AvL9OeT.png', 5),
+('ong', 'https://i.imgur.com/3moAFmv.jpeg', 6);
 
 INSERT INTO imagens (tipo, url, id_campanha) VALUES
 ('campanha', 'https://i.imgur.com/PgZqZui.jpeg', 1),
