@@ -36,7 +36,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <?php if (isset($_SESSION['email'])): $logado = $_SESSION['email'];?> <!-- Verifica qual menu exibir -->
+                <?php if (isset($_SESSION['email'])): $logado = $_SESSION['nome'];?> <!-- Verifica qual menu exibir -->
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="doar.php">QUERO DOAR</a>
@@ -123,7 +123,7 @@
             
             <h1>DOE ROUPAS E TRANSFORME VIDAS</h1>
             
-			<h2>Bem-vindo <?php echo $logado; ?></h2>
+			<h2>Bem-vindo <?php echo $logado; ?>!</h2>
             <p>Cada peça de roupa pode fazer a diferença real na vida de alguém. Conectamos sua doação às necessidades
                 específicas de ONGs próximas, ajudando você a doar exatamente o que é mais necessário no momento. Faça parte
                 dessa corrente de solidariedade e transforme sua doação em cuidado, dignidade e oportunidade para quem mais

@@ -19,11 +19,14 @@
 
 
 	$user = mysqli_fetch_assoc($result);
+	$nomeCompleto = $user['nome'];
+	$primeiroNome = explode(' ', $nomeCompleto)[0];
 
 	if ($user && password_verify($senha, $user['senha_hash']))
 	{
 		$_SESSION['email'] = $email;
 		$_SESSION['id'] = $user['id'];
+		$_SESSION['nome'] = $primeiroNome;
 		header('Location: index.php');
 	  	exit;
 	}

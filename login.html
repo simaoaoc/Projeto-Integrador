@@ -76,8 +76,12 @@
     <script>
     const params = new URLSearchParams(window.location.search);
     if (params.get('erro')) {
-        swal('Erro', 'Usuário ou senha inválidos', 'error');
+        swal('Erro', 'Usuário ou Senha Inválidos', 'error')
+            .then(() => {
+                window.history.replaceState({}, document.title, window.location.pathname);
+            });
     }
+
     </script>
 
 </body>
