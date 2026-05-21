@@ -94,7 +94,7 @@
       $stmt = $conexao->prepare("
         SELECT u.nome, u.cep, i.url
         FROM imagens i 
-        JOIN usuarios u ON i.id_usuario = u.id 
+        RIGHT JOIN usuarios u ON i.id_usuario = u.id 
         WHERE u.email = ? 
         LIMIT 1;
       ");
@@ -123,7 +123,8 @@
             <div class="background-blue">
                 <section class="main-content-user">
                     <article>
-						<img src="<?php echo $url; ?>" alt="">	
+						<img src="<?php echo $url; ?>" alt="">
+                        <button type="button" id="btnAlterarImagem" class="alterar-imagem">Alterar imagem de perfil</button>
                     </article>
                     <article>
                         <label for="name">Nome</label>
@@ -153,6 +154,45 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        document.getElementById('btnAlterarImagem').addEventListener('click', function () {
+            swal({
+                text: 'Cole o link da nova imagem:',
+                content: "input",
+                button: {
+                    text: "Salvar",
+                    closeModal: false,
+                },
+            })
+            .then((url) => {
+                if (!url) throw null;
+
+                // envia pro PHP via fetch
+                fetch('update-imagem.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: 'url=' + encodeURIComponent(url)
+                })
+                .then(response => response.text())
+                .then(res => {
+                    if (res === 'ok') {
+                        swal("Sucesso!", "Imagem atualizada!", "success")
+                        .then(() => location.reload());
+                    } else {
+                        swal("Erro", "Não foi possível atualizar", "error");
+                    }
+                });
+
+            })
+            .catch(() => {
+                swal.close();
+            });
+        });
+    </script>
 </body>
 
 </html>
