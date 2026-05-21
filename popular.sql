@@ -14,7 +14,10 @@ INSERT INTO usuarios (nome, email, cep, senha_hash, ativo) VALUES
 ('Simão', 'simao@email.com', '06622-000', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
 ('Bruno', 'bruno@email.com', '06611-111', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
 ('Leandro', 'leandro@email.com', '06500-200', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
-('Jonatas', 'jonatas@email.com', '06400-300', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo');
+('Jonatas', 'jonatas@email.com', '06400-300', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
+('Tatiana', 'tatiana@email.com', '06300-400', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
+('Cristiany', 'cristiany@email.com', '06200-500', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
+('João', 'joao@email.com', '06100-600', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo');
 
 -- ====================================================================
 -- 4. INSERIR 20 ONGS
@@ -157,3 +160,67 @@ SELECT
   id
 FROM usuarios
 WHERE nome = 'Minsc';
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/emerson.png',
+  id
+FROM usuarios
+WHERE nome = 'Emerson';
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/simao.png',
+  id
+FROM usuarios
+WHERE nome = 'Simão';
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/bruno.png',
+  id
+FROM usuarios
+WHERE nome = 'Bruno';
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/leandro.png',
+  id
+FROM usuarios
+WHERE nome = 'Leandro';
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/jonatas.png',
+  id
+FROM usuarios
+WHERE nome = 'Jonatas';
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/tatiana.png',
+  id
+FROM usuarios
+WHERE nome = 'Tatiana';
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/cristiany.png',
+  id
+FROM usuarios
+WHERE nome = 'Cristiany';
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/joao.png',
+  id
+FROM usuarios
+WHERE nome = 'João';

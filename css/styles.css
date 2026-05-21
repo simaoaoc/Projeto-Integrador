@@ -133,6 +133,7 @@ footer {
     animation-delay: calc(var(--i) * 0.08s);
 }
 
+
 @keyframes donate-reveal {
     0%, 20% {
         opacity: 0;
@@ -726,6 +727,13 @@ main.bg-blue .background-blue section.main-content-user input {
     color: #004B8D;
 }
 
+.foto-integrante {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
 .card-integrante h4 {
     margin-top: 1rem;
     font-size: 1.1rem;
@@ -762,6 +770,13 @@ main.bg-blue .background-blue section.main-content-user input {
 .user-icon i {
     color: white;
     font-size: 2rem;
+}
+
+main.bg-blue form button.alterar-imagem{
+    background-color: transparent;
+    color: #00f;
+    border: none;
+    text-decoration: underline;
 }
 
 /* RESPONSIVO */
