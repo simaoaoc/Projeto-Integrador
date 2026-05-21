@@ -726,6 +726,13 @@ main.bg-blue .background-blue section.main-content-user input {
     color: #004B8D;
 }
 
+.foto-integrante {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
 .card-integrante h4 {
     margin-top: 1rem;
     font-size: 1.1rem;
