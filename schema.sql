@@ -1,3 +1,9 @@
+DROP DATABASE pi;
+
+CREATE DATABASE pi;
+
+USE pi;
+
 CREATE TABLE usuarios (
   id INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(250) NOT NULL,
@@ -65,23 +71,27 @@ CREATE TABLE imagens (
  CHECK ((id_usuario IS NOT NULL) + (id_ong IS NOT NULL) + (id_campanha IS NOT NULL) = 1)
 );
 
-CREATE TABLE conversas(
-  id_conversa INT PRIMARY KEY AUTO_INCREMENT,
-  id_usuario INT NOT NULL,
-  id_ong INT NOT NULL,
-  criado_em DATETIME DEFAULT NOW(),
-  ultima_mensagem_em DATETIME DEFAULT NOW() ON UPDATE NOW(),
+
+CREATE TABLE enderecos (
+  id_usuario INT,
+  id_ong INT,
+  endereco JSON,
   FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
-  FOREIGN KEY (id_ong) REFERENCES ongs(id_ong)
+  FOREIGN KEY (id_ong) REFERENCES ongs(id_ong),
+  CHECK( (id_ong IS NOT NULL) + (id_usuario IS NOT NULL) = 1)
 );
 
-CREATE TABLE mensagens(
-  id_mensagem INT PRIMARY KEY AUTO_INCREMENT,
-  id_conversa INT NOT NULL,
-  id_remetente INT NOT NULL,
-  conteudo VARCHAR(250),
-  enviada_em DATETIME DEFAULT NOW() NOT NULL,
-  status ENUM('enviada', 'recebida', 'lida') NOT NULL DEFAULT 'enviada',
-  FOREIGN KEY (id_remetente) REFERENCES usuarios(id),
-  FOREIGN KEY (id_conversa) REFERENCES conversas(id_conversa)
+
+CREATE TABLE coordenadas (
+  id_usuario INT,
+  id_ong INT,
+  lon NUMERIC(8, 6) NOT NULL,
+  lat NUMERIC(8, 6) NOT NULL,
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+  FOREIGN KEY (id_ong) REFERENCES ongs(id_ong),
+  CHECK( (id_ong IS NOT NULL) + (id_usuario IS NOT NULL) = 1)
 );
+
+
+
+

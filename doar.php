@@ -1,4 +1,6 @@
 ﻿<?php
+  ini_set('display_errors', 1);
+  error_reporting(E_ALL);
   include_once('config.php');
   session_start();
 ?>
@@ -89,19 +91,9 @@
     </nav>
 
 
-<?php
-$stmt = $conexao->prepare("
-SELECT o.id_ong, o.nome_fantasia, o.whatsapp, o.instagram, i.url
-FROM ongs o
-LEFT JOIN imagens i
-on o.id_ong = i.id_ong
-ORDER BY o.id_ong;");
-
-$stmt->execute();
-$result = $stmt->get_result();
-$ong = $result->fetch_assoc();
-
-?>
+	<?php
+	include_once('calcular_dist.php');
+	?>
     <main class="donate-page pb-5">
         <section class="container py-4">
             <h1>SELECIONE A ONG E FAÇA SUA DOAÇÃO</h1>
@@ -116,6 +108,9 @@ $ong = $result->fetch_assoc();
 
                 <div class="row g-3">
                     <!-- ONG cards -->
+				
+					<?php foreach ($dadosOngs as $ong): ?>
+
                     <div class="col-12 col-sm-6 col-lg-4">
                         <div class="card ong-card rounded-4 shadow-sm border-0">
                             <div class="card-body text-center">
@@ -125,7 +120,7 @@ $ong = $result->fetch_assoc();
                                    data-img="<?php echo $ong['url'] ?>">
                                    <img src="<?php echo $ong['url'] ?>" class="img-fluid ong-img">
                                 </a>
-                                <p class="ong-distance text-secondary mb-3"><i class="bi bi-geo-alt-fill text-danger"></i> 2,3 km</p>
+                                <p class="ong-distance text-secondary mb-3"><i class="bi bi-geo-alt-fill text-danger"></i><?php echo $ong['distancia'] ?> km</p>
                                 <h5 class="fw-bold">Necessidades</h5>
                                 <ul class="list-unstyled ong-list mb-3">
                                     <li><span class="dot bg-danger"></span> Blusa de Moletom</li>
@@ -142,157 +137,7 @@ $ong = $result->fetch_assoc();
                             </div>
                         </div>
 					</div>
-
-					<?php $ong = $result->fetch_assoc(); ?>
-					<div class="col-12 col-sm-6 col-lg-4">
-                        <div class="card ong-card rounded-4 shadow-sm border-0">
-                            <div class="card-body text-center">
-                                <h3 class="ong-title"><?php echo $ong['nome_fantasia'] ?></h3>
-								<a href="#" class="abrir-ong" 
-                                   data-id="<?php echo $ong['id_ong'] ?>"
-                                   data-img="<?php echo $ong['url'] ?>">
-                                   <img src="<?php echo $ong['url'] ?>" class="img-fluid ong-img">
-                                </a>
-                                <p class="ong-distance text-secondary mb-3"><i
-                                        class="bi bi-geo-alt-fill text-danger"></i> 2,3 km</p>
-                                <h5 class="fw-bold">Necessidades</h5>
-                                <ul class="list-unstyled ong-list mb-3">
-                                    <li><span class="dot bg-danger"></span> Blusa de Moletom</li>
-                                    <li><span class="dot bg-warning"></span> Bermuda</li>
-                                    <li><span class="dot bg-success"></span> Camiseta</li>
-                                </ul>
-                                <p class="mb-2">Entre em Contato</p>
-                                <div class="d-flex justify-content-center gap-3">
-                                    <a href="<?php echo $ong['instagram'] ?>" class="contact-icon text-decoration-none"><img
-                                            src="./images/instagram.jpg" alt="Instagram" class="contact-icon-img"></a>
-                                    <a href="<?php echo $ong['whatsapp'] ?>" class="contact-icon text-decoration-none"><img
-                                            src="./images/whatsapp.jpg" alt="WhatsApp" class="contact-icon-img"></a>
-                                </div>
-                            </div>
-                        </div>
-					</div>
-
-					<?php $ong = $result->fetch_assoc(); ?>
-
-					<div class="col-12 col-sm-6 col-lg-4">
-                        <div class="card ong-card rounded-4 shadow-sm border-0">
-                            <div class="card-body text-center">
-                                <h3 class="ong-title"><?php echo $ong['nome_fantasia'] ?></h3>
-								<a href="#" class="abrir-ong" 
-                                   data-id="<?php echo $ong['id_ong'] ?>"
-                                   data-img="<?php echo $ong['url'] ?>">
-                                   <img src="<?php echo $ong['url'] ?>" class="img-fluid ong-img">
-                                </a>
-                                <p class="ong-distance text-secondary mb-3"><i
-                                        class="bi bi-geo-alt-fill text-danger"></i> 2,3 km</p>
-                                <h5 class="fw-bold">Necessidades</h5>
-                                <ul class="list-unstyled ong-list mb-3">
-                                    <li><span class="dot bg-danger"></span> Blusa de Moletom</li>
-                                    <li><span class="dot bg-warning"></span> Bermuda</li>
-                                    <li><span class="dot bg-success"></span> Camiseta</li>
-                                </ul>
-                                <p class="mb-2">Entre em Contato</p>
-                                <div class="d-flex justify-content-center gap-3">
-                                    <a href="<?php echo $ong['instagram'] ?>" class="contact-icon text-decoration-none"><img
-                                            src="./images/instagram.jpg" alt="Instagram" class="contact-icon-img"></a>
-                                    <a href="<?php echo $ong['whatsapp'] ?>" class="contact-icon text-decoration-none"><img
-                                            src="./images/whatsapp.jpg" alt="WhatsApp" class="contact-icon-img"></a>
-                                </div>
-                            </div>
-                        </div>
-					</div>
-
-					<?php $ong = $result->fetch_assoc(); ?>
-
-					<div class="col-12 col-sm-6 col-lg-4">
-                        <div class="card ong-card rounded-4 shadow-sm border-0">
-                            <div class="card-body text-center">
-                                <h3 class="ong-title"><?php echo $ong['nome_fantasia'] ?></h3>
-								<a href="#" class="abrir-ong" 
-                                   data-id="<?php echo $ong['id_ong'] ?>"
-                                   data-img="<?php echo $ong['url'] ?>">
-                                   <img src="<?php echo $ong['url'] ?>" class="img-fluid ong-img">
-                                </a>
-                                <p class="ong-distance text-secondary mb-3"><i
-                                        class="bi bi-geo-alt-fill text-danger"></i> 2,3 km</p>
-                                <h5 class="fw-bold">Necessidades</h5>
-                                <ul class="list-unstyled ong-list mb-3">
-                                    <li><span class="dot bg-danger"></span> Blusa de Moletom</li>
-                                    <li><span class="dot bg-warning"></span> Bermuda</li>
-                                    <li><span class="dot bg-success"></span> Camiseta</li>
-                                </ul>
-                                <p class="mb-2">Entre em Contato</p>
-                                <div class="d-flex justify-content-center gap-3">
-                                    <a href="<?php echo $ong['instagram'] ?>" class="contact-icon text-decoration-none"><img
-                                            src="./images/instagram.jpg" alt="Instagram" class="contact-icon-img"></a>
-                                    <a href="<?php echo $ong['whatsapp'] ?>" class="contact-icon text-decoration-none"><img
-                                            src="./images/whatsapp.jpg" alt="WhatsApp" class="contact-icon-img"></a>
-                                </div>
-                            </div>
-                        </div>
-					</div>
-
-					<?php $ong = $result->fetch_assoc(); ?>
-
-					<div class="col-12 col-sm-6 col-lg-4">
-                        <div class="card ong-card rounded-4 shadow-sm border-0">
-                            <div class="card-body text-center">
-                                <h3 class="ong-title"><?php echo $ong['nome_fantasia'] ?></h3>
-								<a href="#" class="abrir-ong" 
-                                   data-id="<?php echo $ong['id_ong'] ?>"
-                                   data-img="<?php echo $ong['url'] ?>">
-                                   <img src="<?php echo $ong['url'] ?>" class="img-fluid ong-img">
-                                </a>
-                                <p class="ong-distance text-secondary mb-3"><i
-                                        class="bi bi-geo-alt-fill text-danger"></i> 2,3 km</p>
-                                <h5 class="fw-bold">Necessidades</h5>
-                                <ul class="list-unstyled ong-list mb-3">
-                                    <li><span class="dot bg-danger"></span> Blusa de Moletom</li>
-                                    <li><span class="dot bg-warning"></span> Bermuda</li>
-                                    <li><span class="dot bg-success"></span> Camiseta</li>
-                                </ul>
-                                <p class="mb-2">Entre em Contato</p>
-                                <div class="d-flex justify-content-center gap-3">
-                                    <a href="<?php echo $ong['instagram'] ?>" class="contact-icon text-decoration-none"><img
-                                            src="./images/instagram.jpg" alt="Instagram" class="contact-icon-img"></a>
-                                    <a href="<?php echo $ong['whatsapp'] ?>" class="contact-icon text-decoration-none"><img
-                                            src="./images/whatsapp.jpg" alt="WhatsApp" class="contact-icon-img"></a>
-                                </div>
-                            </div>
-                        </div>
-					</div>
-
-					<?php $ong = $result->fetch_assoc(); ?>
-
-					<div class="col-13 col-sm-6 col-lg-4">
-                        <div class="card ong-card rounded-4 shadow-sm border-0">
-                            <div class="card-body text-center">
-                                <h3 class="ong-title"><?php echo $ong['nome_fantasia'] ?></h3>
-								<a href="#" class="abrir-ong" 
-                                   data-id="<?php echo $ong['id_ong'] ?>"
-                                   data-img="<?php echo $ong['url'] ?>">
-                                   <img src="<?php echo $ong['url'] ?>" class="img-fluid ong-img">
-                                </a>
-                                <p class="ong-distance text-secondary mb-3"><i
-                                        class="bi bi-geo-alt-fill text-danger"></i> 2,3 km</p>
-                                <h5 class="fw-bold">Necessidades</h5>
-                                <ul class="list-unstyled ong-list mb-3">
-                                    <li><span class="dot bg-danger"></span> Blusa de Moletom</li>
-                                    <li><span class="dot bg-warning"></span> Bermuda</li>
-                                    <li><span class="dot bg-success"></span> Camiseta</li>
-                                </ul>
-                                <p class="mb-2">Entre em Contato</p>
-                                <div class="d-flex justify-content-center gap-3">
-                                    <a href="<?php echo $ong['instagram'] ?>" class="contact-icon text-decoration-none"><img
-                                            src="./images/instagram.jpg" alt="Instagram" class="contact-icon-img"></a>
-                                    <a href="<?php echo $ong['whatsapp'] ?>" class="contact-icon text-decoration-none"><img
-                                            src="./images/whatsapp.jpg" alt="WhatsApp" class="contact-icon-img"></a>
-                                </div>
-                            </div>
-                        </div>
-					</div>
-
-					<?php $ong = $result->fetch_assoc(); ?>
+				<?php endforeach; ?>
 
 
                 </div>
