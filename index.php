@@ -1,4 +1,5 @@
 <?php
+  include_once('config.php');
   session_start();
 ?>
 
@@ -123,7 +124,7 @@
             
             <h1>DOE ROUPAS E TRANSFORME VIDAS</h1>
             
-			<h2>Bem-vindo <?php echo $logado; ?>!</h2>
+			<h2>Bem-vindo <?php echo $logado ?>!</h2>
             <p>Cada peça de roupa pode fazer a diferença real na vida de alguém. Conectamos sua doação às necessidades
                 específicas de ONGs próximas, ajudando você a doar exatamente o que é mais necessário no momento. Faça parte
                 dessa corrente de solidariedade e transforme sua doação em cuidado, dignidade e oportunidade para quem mais
