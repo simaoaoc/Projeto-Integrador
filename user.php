@@ -123,18 +123,20 @@
             <div class="background-blue">
                 <section class="main-content-user">
                     <article>
-						<img src="<?php echo $url; ?>" alt="">
+                        <div class="avatar">
+                            <img class="imagem-usuario" src="<?php echo $url; ?>" alt="">
+                        </div>
                         <button type="button" id="btnAlterarImagem" class="alterar-imagem">Alterar imagem de perfil</button>
                     </article>
                     <article>
                         <label for="name">Nome</label>
-                        <input type="text" name="name" id="name" placeholder="<?php echo $nome ?>">
+                        <input type="text" name="name" id="name" value="<?php echo $nome ?>">
 
                         <label for="cep">CEP</label>
-                        <input type="number" name="cep" id="cep" placeholder="<?php echo $cep ?>">
+                        <input type="number" name="cep" id="cep" value="<?php echo $cep ?>">
 
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" placeholder="<?php echo $_SESSION['email'] ?>">
+                        <input type="email" name="email" id="email" value="<?php echo $_SESSION['email'] ?>">
                     </article>
 
                 </section>
@@ -179,11 +181,12 @@
                 })
                 .then(response => response.text())
                 .then(res => {
+                    console.log(res);
                     if (res === 'ok') {
                         swal("Sucesso!", "Imagem atualizada!", "success")
                         .then(() => location.reload());
                     } else {
-                        swal("Erro", "Não foi possível atualizar", "error");
+                        swal("Erro", res, "error");
                     }
                 });
 

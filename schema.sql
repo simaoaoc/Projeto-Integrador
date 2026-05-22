@@ -51,7 +51,7 @@ CREATE TABLE campanha_itens(
   id_tipo_item INT NOT NULL,
   quantidade_meta INT NOT NULL CHECK (quantidade_meta > 0),
   quantidade_arrecadada INT DEFAULT 0 CHECK (quantidade_arrecadada >= 0),
-  observação VARCHAR(100),
+  observação VARCHAR(300),
   FOREIGN KEY (id_tipo_item) REFERENCES tipo_itens(id_tipo_item) ON DELETE RESTRICT,
   FOREIGN KEY (id_campanha) REFERENCES campanhas(id_campanha) ON DELETE CASCADE,
   UNIQUE(id_campanha, id_tipo_item),
@@ -61,7 +61,7 @@ CREATE TABLE campanha_itens(
 CREATE TABLE imagens (
   id_img INT PRIMARY KEY AUTO_INCREMENT,
   tipo ENUM('perfil', 'ong', 'campanha') NOT NULL,
-  url VARCHAR(100) NOT NULL,
+  url VARCHAR(300) NOT NULL,
   id_usuario INT,
   id_ong INT,
   id_campanha INT,
@@ -91,7 +91,3 @@ CREATE TABLE coordenadas (
   FOREIGN KEY (id_ong) REFERENCES ongs(id_ong),
   CHECK( (id_ong IS NOT NULL) + (id_usuario IS NOT NULL) = 1)
 );
-
-
-
-
