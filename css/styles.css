@@ -844,3 +844,35 @@ a.logout-btn:hover {
 	color: white !important;
 }
 
+/* Ajustes responsivos para telas de celular nas guias login e cadastro */
+@media (max-width: 575px) {
+    main.bg-blue {
+        margin: 0.5rem 0;
+    }
+
+    main.bg-blue h1 {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    main.bg-blue .background-blue {
+        padding: 1rem;
+    }
+
+    /* Ajuste da largura e do padding */
+    main.bg-blue .background-blue section.main-content-not-user {
+        width: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+        align-items: stretch;
+    }
+
+    main.bg-blue .background-blue section.main-content-not-user input {
+        margin-bottom: 1rem;
+    }
+
+    main.bg-blue form button {
+        padding: 0.75rem 2rem;
+    }
+}
+
