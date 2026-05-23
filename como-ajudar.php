@@ -165,7 +165,7 @@
 
         <section class="cta-section text-center">
             <p>Pronto para fazer a diferença?</p>
-            <a href="doar.html" class="quero-doar">QUERO DOAR</a>
+            <a href="doar.php" class="quero-doar">QUERO DOAR</a>
         </section>
     </main>
 

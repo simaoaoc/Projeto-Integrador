@@ -60,7 +60,7 @@
                         <a class="nav-link" href="contato.php">CONTATO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="user.html">INFORMAÇÕES DO USUÁRIO</a>
+                        <a class="nav-link" href="user.php">INFORMAÇÕES DO USUÁRIO</a>
                     </li>
 				</ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">

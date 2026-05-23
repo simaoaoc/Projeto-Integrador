@@ -1,6 +1,6 @@
 ﻿
 INSERT INTO usuarios (nome, email, cep, senha_hash, ativo) VALUES
-('Astarion', 'astarion.szarr@faerunmail.com', '01001-000', '$2y$12$bNyB3V21.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
+('Astarion', 'astarion.szarr@faerunmail.com', '13801-000', '$2y$12$bNyB3V21.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
 ('Shadowheart', 'shadowheart.shar@moonmail.net', '11013-201', '$2y$12$F2JfwDigVRlEgjj.vCvj6OHhk9SMjEIS3QGSVGaFfam6S4lrZdbtC', 'ativo'),
 ('Gale', 'gale.dekarios@waterdeep.org', '13010-001', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
 ('Laezel', 'laezel.kithrak@creche.gith', '12210-000', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
@@ -10,14 +10,14 @@ INSERT INTO usuarios (nome, email, cep, senha_hash, ativo) VALUES
 ('Minthara', 'minthara.vengeance@underdark.net', '01310-100', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
 ('Jaheira', 'jaheira.highharper@baldur.org', '11060-001', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
 ('Minsc', 'minsc.boo@rashemen.com', '13092-150', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
-('Emerson', 'emerson@email.com', '06600-000', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Emerson', 'emerson@email.com', '13300-003', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
 ('Simão', 'simao@email.com', '06622-000', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
-('Bruno', 'bruno@email.com', '06611-111', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Bruno', 'bruno@email.com', '06410-300', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
 ('Leandro', 'leandro@email.com', '06500-200', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
-('Tatiana', 'tatiana@email.com', '06500-100', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
-('Cristiany', 'cristiany@email.com', '06600-200', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
-('Joao', 'joao@email.com', '06700-200', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
-('Jonatas', 'jonatas@email.com', '06400-300', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo');
+('Tatiana', 'tatiana@email.com', '17340-000', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Cristiany', 'cristiany@email.com', '11700-000', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Joao', 'joao@email.com', '14800-160', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Jonatas', 'jonatas@email.com', '15010-000', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo');
 
 INSERT INTO ongs (nome_fantasia, cnpj, cep, site, instagram, whatsapp, status_aprovação) VALUES
 ('Projeto Roupas para Baldurs Gate', '12.345.678/0001-01', '01001-000', 'www.roupasbg.org', '@roupasbg', '11999990001', 'Aprovada'),
