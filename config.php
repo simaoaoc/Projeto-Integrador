@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 $host = "localhost";
 $usuario = "root";
-$senha = "bananas";
+$senha = "root";
 $banco = "pi";
 
 $conexao = new mysqli($host, $usuario, $senha, $banco);

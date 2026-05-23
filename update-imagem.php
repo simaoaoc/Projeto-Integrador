@@ -26,7 +26,7 @@ $user = $result->fetch_assoc();
 $id_usuario = $user['id'];
 
 // verifica se já existe imagem
-$stmt = $conexao->prepare("SELECT id FROM imagens WHERE id_usuario = ?");
+$stmt = $conexao->prepare("SELECT id_img FROM imagens WHERE id_usuario = ?");
 $stmt->bind_param("i", $id_usuario);
 $stmt->execute();
 $result = $stmt->get_result();

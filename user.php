@@ -119,22 +119,24 @@
 	?>
     <main class="bg-blue">
         <h1>INFORMAÇÕES</h1>
-        <form action="#" method="post">
+        <form id="formEditarUsuario" action="#" method="post">
             <div class="background-blue">
                 <section class="main-content-user">
                     <article>
-						<img src="<?php echo $url; ?>" alt="">
+                        <div class="avatar">
+                            <img class="imagem-usuario" src="<?php echo $url; ?>" alt="">
+                        </div>
                         <button type="button" id="btnAlterarImagem" class="alterar-imagem">Alterar imagem de perfil</button>
                     </article>
                     <article>
                         <label for="name">Nome</label>
-                        <input type="text" name="name" id="name" placeholder="<?php echo $nome ?>">
+                        <input type="text" name="name" id="name" value="<?php echo $nome ?>">
 
                         <label for="cep">CEP</label>
-                        <input type="number" name="cep" id="cep" placeholder="<?php echo $cep ?>">
+                        <input type="number" name="cep" id="cep" value="<?php echo $cep ?>">
 
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" placeholder="<?php echo $_SESSION['email'] ?>">
+                        <input type="email" name="email" id="email" value="<?php echo $_SESSION['email'] ?>">
                     </article>
 
                 </section>
@@ -154,6 +156,7 @@
         </div>
     </footer>
 
+    <!-- Alterar Imagem -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
@@ -179,11 +182,12 @@
                 })
                 .then(response => response.text())
                 .then(res => {
+                    console.log(res);
                     if (res === 'ok') {
                         swal("Sucesso!", "Imagem atualizada!", "success")
                         .then(() => location.reload());
                     } else {
-                        swal("Erro", "Não foi possível atualizar", "error");
+                        swal("Erro", res, "error");
                     }
                 });
 
@@ -193,6 +197,51 @@
             });
         });
     </script>
-</body>
 
+    <!-- Alterar informações do usuário -->
+     <script>
+        document.getElementById('formEditarUsuario').addEventListener('submit', function(e){
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const cep = document.getElementById('cep').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            // 🔴 VALIDAÇÃO
+            if (!name || !cep || !email) {
+                swal("Erro", "Preencha todos os campos!", "error");
+                return;
+            }
+
+            // validação simples extra (opcional mas recomendado)
+            if (cep.length < 8) {
+                swal("Erro", "CEP inválido!", "error");
+                return;
+            }
+
+            // envio via fetch
+            fetch('update-usuario.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `name=${encodeURIComponent(name)}&cep=${encodeURIComponent(cep)}&email=${encodeURIComponent(email)}`
+            })
+            .then(res => res.text())
+            .then(res => {
+                console.log(res);
+
+                if (res === 'ok') {
+                    swal("Sucesso!", "Dados atualizados!", "success")
+                    .then(() => location.reload());
+                } else {
+                    swal("Erro", res, "error");
+                }
+            })
+            .catch(() => {
+                swal("Erro", "Falha na requisição", "error");
+            });
+        });
+    </script>
+</body>
 </html>
