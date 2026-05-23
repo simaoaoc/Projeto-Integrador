@@ -119,7 +119,7 @@
 	?>
     <main class="bg-blue">
         <h1>INFORMAÇÕES</h1>
-        <form action="#" method="post">
+        <form id="formEditarUsuario" action="#" method="post">
             <div class="background-blue">
                 <section class="main-content-user">
                     <article>
@@ -156,6 +156,7 @@
         </div>
     </footer>
 
+    <!-- Alterar Imagem -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
@@ -196,6 +197,51 @@
             });
         });
     </script>
-</body>
 
+    <!-- Alterar informações do usuário -->
+     <script>
+        document.getElementById('formEditarUsuario').addEventListener('submit', function(e){
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const cep = document.getElementById('cep').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            // 🔴 VALIDAÇÃO
+            if (!name || !cep || !email) {
+                swal("Erro", "Preencha todos os campos!", "error");
+                return;
+            }
+
+            // validação simples extra (opcional mas recomendado)
+            if (cep.length < 8) {
+                swal("Erro", "CEP inválido!", "error");
+                return;
+            }
+
+            // envio via fetch
+            fetch('update-usuario.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `name=${encodeURIComponent(name)}&cep=${encodeURIComponent(cep)}&email=${encodeURIComponent(email)}`
+            })
+            .then(res => res.text())
+            .then(res => {
+                console.log(res);
+
+                if (res === 'ok') {
+                    swal("Sucesso!", "Dados atualizados!", "success")
+                    .then(() => location.reload());
+                } else {
+                    swal("Erro", res, "error");
+                }
+            })
+            .catch(() => {
+                swal("Erro", "Falha na requisição", "error");
+            });
+        });
+    </script>
+</body>
 </html>

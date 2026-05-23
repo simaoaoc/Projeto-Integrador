@@ -822,6 +822,10 @@ main.bg-blue .imagem-usuario{
         line-height: 1.8rem;
     }
 
+    main.bg-blue .avatar{
+        margin-left: 0;
+    }
+
 }
 @media (max-width: 768px) {
 
