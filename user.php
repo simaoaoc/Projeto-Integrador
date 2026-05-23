@@ -133,7 +133,7 @@
                         <input type="text" name="name" id="name" value="<?php echo $nome ?>">
 
                         <label for="cep">CEP</label>
-                        <input type="number" name="cep" id="cep" value="<?php echo $cep ?>">
+                        <input type="text" name="cep" id="cep" value="<?php echo $cep ?>">
 
                         <label for="email">E-mail</label>
                         <input type="email" name="email" id="email" value="<?php echo $_SESSION['email'] ?>">
