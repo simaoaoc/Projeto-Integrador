@@ -14,6 +14,9 @@ INSERT INTO usuarios (nome, email, cep, senha_hash, ativo) VALUES
 ('Simão', 'simao@email.com', '06622-000', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
 ('Bruno', 'bruno@email.com', '06611-111', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
 ('Leandro', 'leandro@email.com', '06500-200', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Tatiana', 'tatiana@email.com', '06500-100', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Cristiany', 'cristiany@email.com', '06600-200', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Joao', 'joao@email.com', '06700-200', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
 ('Jonatas', 'jonatas@email.com', '06400-300', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo');
 
 INSERT INTO ongs (nome_fantasia, cnpj, cep, site, instagram, whatsapp, status_aprovação) VALUES
