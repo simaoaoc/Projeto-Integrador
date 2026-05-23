@@ -221,7 +221,7 @@
 
                 <h2>Pronto para fazer a diferença?</h2>
 
-                <a href="doar.html">QUERO DOAR</a>
+                <a href="doar.php">QUERO DOAR</a>
 
             </section>
 
