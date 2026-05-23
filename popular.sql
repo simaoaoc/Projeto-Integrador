@@ -2,23 +2,20 @@
 INSERT INTO usuarios (nome, email, cep, senha_hash, ativo) VALUES
 ('Astarion', 'astarion.szarr@faerunmail.com', '01001-000', '$2y$12$bNyB3V21.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
 ('Shadowheart', 'shadowheart.shar@moonmail.net', '11013-201', '$2y$12$F2JfwDigVRlEgjj.vCvj6OHhk9SMjEIS3QGSVGaFfam6S4lrZdbtC', 'ativo'),
-('Gale', 'gale.dekarios@waterdeep.org', '13010-001', '/vU6NrdxWdM.VGBeQtviLukDyAfQU20.GvqcNdOwATe', 'ativo'),
-('Laezel', 'laezel.kithrak@creche.gith', '12210-000', '/rsZB/oeqi/5LjElO8o2FiR6S7HimIqXrw1PsQ/abaLisszO', 'ativo'),
-('Wyll', 'wyll.ravengard@baldursgate.gov', '14010-000', '/7xMUberRHYvJL28c7mdFvA7lO3vK59pB17N3q', 'ativo'),
-('Karlach', 'karlach.fury@avernus.com', '04533-010', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
-('Halsin', 'halsin.bear@emeraldgrove.org', '18015-000', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
-('Minthara', 'minthara.vengeance@underdark.net', '01310-100', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
-('Jaheira', 'jaheira.highharper@baldur.org', '11060-001', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
-('Minsc', 'minsc.boo@rashemen.com', '13092-150', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
-('Emerson', 'emerson@email.com', '06600-000', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
-('Simão', 'simao@email.com', '06622-000', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
-('Bruno', 'bruno@email.com', '06611-111', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
-('Leandro', 'leandro@email.com', '06500-200', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo'),
-('Jonatas', 'jonatas@email.com', '06400-300', '.6vu9B1jAFHvKOhV4SMAOzdCnOG7hJIIX16eIcZkGS.ly', 'ativo');
+('Gale', 'gale.dekarios@waterdeep.org', '13010-001', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Laezel', 'laezel.kithrak@creche.gith', '12210-000', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Wyll', 'wyll.ravengard@baldursgate.gov', '14010-000', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Karlach', 'karlach.fury@avernus.com', '04533-010', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Halsin', 'halsin.bear@emeraldgrove.org', '18015-000', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Minthara', 'minthara.vengeance@underdark.net', '01310-100', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Jaheira', 'jaheira.highharper@baldur.org', '11060-001', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Minsc', 'minsc.boo@rashemen.com', '13092-150', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Emerson', 'emerson@email.com', '06600-000', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Simão', 'simao@email.com', '06622-000', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Bruno', 'bruno@email.com', '06611-111', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Leandro', 'leandro@email.com', '06500-200', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo'),
+('Jonatas', 'jonatas@email.com', '06400-300', '$2y$12$n/WPo2Wxhs0/yOXFsUHnmeqH/s/p.8LVrKCScvJF2zvALpP0DfjFq', 'ativo');
 
--- ====================================================================
--- 4. INSERIR 20 ONGS
--- ====================================================================
 INSERT INTO ongs (nome_fantasia, cnpj, cep, site, instagram, whatsapp, status_aprovação) VALUES
 ('Projeto Roupas para Baldurs Gate', '12.345.678/0001-01', '01001-000', 'www.roupasbg.org', '@roupasbg', '11999990001', 'Aprovada'),
 ('Casa Solidaria Shadowheart', '12.345.678/0001-02', '11013-201', 'www.shadowheartcasa.org', '@shadowcasa', '13999990002', 'Aprovada'),
@@ -27,9 +24,6 @@ INSERT INTO ongs (nome_fantasia, cnpj, cep, site, instagram, whatsapp, status_ap
 ('Harpistas do Bem Coleta Textile', '12.345.678/0001-05', '11060-001', 'www.harpistasdobem.org', '@harpistasbem', '13999990005', 'Aprovada'),
 ('Astarion Recomeço Comunitário', '12.345.678/0001-06', '06600-000', 'www.aquecendocoracoes.org', '@aquecendocoracoes', '11988880001', 'Aprovada');
 
--- ====================================================================
--- 5. INSERIR CAMPANHAS PARA AS ONGS
--- ====================================================================
 INSERT INTO campanhas (id_ong, titulo, descrição, status, criado_em) VALUES
 (1, 'Campanha do Agasalho Baldurs', 'Ajude a aquecer as noites frias.', 'Aberta', NOW()),
 (2, 'Inverno Acolhedor de Shadowheart', 'Doação focada em cobertores e casacos.', 'Aberta', NOW()),
@@ -37,7 +31,6 @@ INSERT INTO campanhas (id_ong, titulo, descrição, status, criado_em) VALUES
 (4, 'Campanha Metropolitana de Jandira', 'Doações gerais de roupas e calçados.', 'Aberta', NOW()),
 (5, 'Passos Quentes em Carapicuiba', 'Arrecadação de meias e calçados infantis.', 'Aberta', NOW()),
 (6, 'Astarion Recomeço Comunitário', 'Doações gerais de roupas e calçados.', 'Aberta', NOW());
-
 
 INSERT INTO tipo_itens (nome, descrição, unidade_medida, tamanho) VALUES
 ('Casaco de Lã', 'Casacos pesados de inverno', 'Unidade', 'G'),
@@ -49,7 +42,6 @@ INSERT INTO tipo_itens (nome, descrição, unidade_medida, tamanho) VALUES
 ('Calça Jeans Masculina', 'Calças jeans conservadas', 'Unidade', '42'),
 ('Blusa de Frio Infantil', 'Roupas quentes para crianças', 'Unidade', '8');
 
-
 INSERT INTO campanha_itens (id_campanha, id_tipo_item, quantidade_meta, quantidade_arrecadada, observação) VALUES
 (1, 1, 100, 20, 'Apenas casacos em bom estado.'),
 (1, 3, 50, 10, 'Tênis de corrida preferencialmente.'),
@@ -59,9 +51,6 @@ INSERT INTO campanha_itens (id_campanha, id_tipo_item, quantidade_meta, quantida
 (5, 5, 200, 45, 'Mantas limpas e ensacadas.'),
 (5, 3, 50, 10, 'Tênis de corrida preferencialmente.');
 
--- ====================================================================
--- 7. BANCO DE IMAGENS CENTRALIZADO 
--- ====================================================================
 INSERT INTO imagens (tipo, url, id_ong) VALUES
 ('ong', 'https://i.imgur.com/aI4BfS8.jpeg', 1),
 ('ong', 'https://i.imgur.com/6D13XUI.jpeg', 2),
@@ -157,3 +146,68 @@ SELECT
   id
 FROM usuarios
 WHERE nome = 'Minsc';
+
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/emerson.png',
+  id
+FROM usuarios
+WHERE nome = 'Emerson';
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/simao.png',
+  id
+FROM usuarios
+WHERE nome = 'Simão';
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/bruno.png',
+  id
+FROM usuarios
+WHERE nome = 'Bruno';
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/leandro.png',
+  id
+FROM usuarios
+WHERE nome = 'Leandro';
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/jonatas.png',
+  id
+FROM usuarios
+WHERE nome = 'Jonatas';
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/tatiana.png',
+  id
+FROM usuarios
+WHERE nome = 'Tatiana';
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/cristiany.png',
+  id
+FROM usuarios
+WHERE nome = 'Cristiany';
+
+INSERT INTO imagens (tipo, url, id_usuario)
+SELECT
+  'perfil',
+  './images/QUEM SOMOS/joao.png',
+  id
+FROM usuarios
+WHERE nome = 'João';
