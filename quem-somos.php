@@ -168,44 +168,36 @@
                     <div class="card-integrante">
                         <img src="./images/QUEM SOMOS/bruno.png" alt="Avatar do Bruno" class="foto-integrante">
                         <h4>Bruno Castro</h4>
-                        <span>atribuição</span>
                     </div>
 
                     <div class="card-integrante">
                         <img src="./images/QUEM SOMOS/cristiany.png" alt="Avatar da Cristiany" class="foto-integrante">
                         <h4>Cristiany da Silva</h4>
-                        <span>atribuição</span>
                     </div>
 
                     <div class="card-integrante">
                         <img src="./images/QUEM SOMOS/emerson.png" alt="Avatar do Emerson" class="foto-integrante">
                         <h4>Emerson Mendes</h4>
-                        <span>atribuição</span>
                     </div>
                     <div class="card-integrante">
                         <img src="./images/QUEM SOMOS/joao.png" alt="Avatar do João" class="foto-integrante">
                         <h4>João Santos</h4>
-                        <span>atribuição</span>
                     </div>
                     <div class="card-integrante">
                         <img src="./images/QUEM SOMOS/jonatas.png" alt="Avatar do Jonatas" class="foto-integrante">
                         <h4>Jonatas de Morais</h4>
-                        <span>atribuição</span>
                     </div>
                     <div class="card-integrante">
                         <img src="./images/QUEM SOMOS/leandro.png" alt="Avatar do Leandro" class="foto-integrante">
                         <h4>Leandro da Cunha</h4>
-                        <span>atribuição</span>
                     </div>
                     <div class="card-integrante">
                         <img src="./images/QUEM SOMOS/simao.png" alt="Avatar do Simão" class="foto-integrante">
                         <h4>Simão Cirilo</h4>
-                        <span>atribuição</span>
                     </div>
                     <div class="card-integrante">
                         <img src="./images/QUEM SOMOS/tatiana.png" alt="Avatar da Tatiana" class="foto-integrante">
                         <h4>Tatiana da Silva</h4>
-                        <span>atribuição</span>
                     </div>
 
                 </div>
