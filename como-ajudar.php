@@ -99,12 +99,12 @@
             <h2>Como funciona a doação</h2>
             <div class="steps-list">
                 <article>
-                    <h3>1. Cadastre sua peça</h3>
-                    <p>Informe o tipo de roupa ou calçado que deseja doar.</p>
+                    <h3>1. Faça seu cadastro.</h3>
+                    <p>Crie sua conta na plataforma e realize o login para começar.</p>
                 </article>
                 <article>
-                    <h3>2. Adicione detalhes</h3>
-                    <p>Inclua tamanho, condição e outras informações importantes.</p>
+                    <h3>2. Acesse "Quero doar"</h3>
+                    <p>Entre no menu para visualizar as ONGs parceiras e suas necessidades.</p>
                 </article>
                 <article>
                     <h3>3. Encontre ONGs próximas</h3>
