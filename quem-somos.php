@@ -124,7 +124,7 @@
                 <h2>Por Que o Projeto Existe</h2>
 
                 <p>
-                    Este projeto foi desenvolvido por 8 alunos do 4º semestre da faculdade UNIVESP,
+                    Este projeto foi desenvolvido por 8 alunos do 4º semestre da Universidade UNIVESP,
                     com o objetivo de criar uma solução com impacto social real.
                 </p>
 
